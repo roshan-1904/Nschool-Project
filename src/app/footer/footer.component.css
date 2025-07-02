@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+  background-color: white;
+  padding: 40px 20px;
+height: 500px;
+}
+.container{
+    display: flex;
+    padding-top: 0px;
+}
+.amber-logo{
+    padding: 20px 0px 0px 0px;
+}
+.para-1{
+    padding: 10px 0px 0px 0px;
+    color: rgb(95, 91, 91);
+}
+.card1{
+    width: 24%;
+    padding-right: 10px;
+}
+.card-11{
+    width: 85%;
+    margin-bottom: 30px;
+}
+.card22{
+    width: 80%;
+    padding: 10px 10px ;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    width: 110%;
+    display: flex;
+}
+.get-the-app{border-right:2px solid rgb(155, 153, 153) ;
+padding-right: 10px;}
+.get-para{
+    padding: 0px 0px 10px 0px;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 100%;
+    font-family: inherit;
+}
+.get-para1{
+    padding: 0px 0px 10px 0px;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 90%;
+    font-family: inherit;
+}
+.card2{
+    width: 25%;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.get-the-app22{
+    padding-left: 10px;
+}
+.top{
+    display: flex;
+}
+.rosi{
+   background: #fee9ef;
+    border-radius: 10px;
+    color: var(--whitelabel_primary_color, #ed3a56);
+    font-size: 12px;
+    margin-left: 8px;margin-top: 24px;
+    padding: 2px 6px;
+     height: 20px;
+}
+h5{
+    font-size: 17px;
+    font-weight: 600;
+}
+p{
+    color: rgb(129, 125, 125);
+   font-size: 15px;
+   margin: 24px 0px 0px 0px;
+
+}
+.about{
+    padding: 10px 0px ;
+}
+.card3{
+    width: 16.5%;
+    padding-left: 0px;
+    padding-top: 20px;
+}
+.card4{
+    width: 10%;
+    padding-left: 0px;
+    padding-top: 20px;
+}
+.card5{
+    width: 20%;
+     padding-top: 20px;
+     padding-bottom: 20px;
+}
+h6{
+    font-size: 12px;
+    font-weight: 500;
+}
+.phone{
+     border: 1px solid rgb(163, 162, 162);
+     margin-top: 20px;
+     padding: 5px 0px;
+     border-radius: 8px;
+}
+.follow-para{
+    font-size: 14px;
+    color: rgb(92, 90, 90);
+    font-weight: 600;
+    flex-direction: none;
+    margin-bottom: 30px;
+}
+.follow{
+ margin: 50px 0px 0px 0px;
+}
+.FollowUs-module__innerDiv{
+    display: flex;
+    gap: 20px;
+}
+@media screen and (max-width:768px) {
+.amber-logo{ padding: 0px 0px 0px 0px;}  
+.para-1{padding: 0px 0px 0px 0px;font-size: 7px;}
+.Trustpilot{font-size: 10px;}
+.TrustScore{font-size: 10px;}
+.get-the-app{padding-right: 10px; border: none;}
+.get-para{ font-size: 13px;padding-bottom: 10px; padding: 0px 0px 10px 0px;;  }
+.get-the-app22{display: none; }
+.card22-logo{padding: 0px 0px 20px 0px;}
+h5{font-size: 10px; padding-bottom: 20px;}
+p{font-size: 10px; margin: 15px 0px 0px 0px;} .top{display: none;}
+.phone-para{font-size: 12px;}.follow{display: none;}
+.card5{width: 30%;}
+body{height: 300px;}
+}
+@media screen and (max-width:426px){
+.card2,.card4,.card3{ display: none;}
+.card1{ width: 45%;} .h5{font-size: 26px;}
+.card5{ width: 45%; padding: 0px 0px 0px 20px ;}
+.phone-para{font-size: 11px;} .card22{ display: none;}
+body{height: 300px;}
+}

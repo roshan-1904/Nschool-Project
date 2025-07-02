@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.aus{
+      padding: 0px 0px 50px 0px;
+    }
+
+.card1{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_1_Melbourne_Federation Square.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card1:hover {
+ background-size: 110%;  
+} 
+.card2{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_2_Brisbane_South Bank Parklands.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card2:hover {
+ background-size: 110%; 
+} 
+.card3{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_3_Sydney_Sydney Opera House.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card3:hover {
+ background-size: 110%; 
+} 
+.card4{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_4_Adelaide_Adelaide Central Market.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card4:hover {
+  background-size: 110%;  
+} 
+.card5{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_5_Perth_Hillarys Boat Harbour.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card5:hover {
+ background-size: 110%;  
+} 
+.card6{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_6_Canberra_National Gallery of Australia.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card6:hover {
+ background-size: 110%;  
+} 
+.card7{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_7_Gold Coast_HOTA Gallery.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card7:hover {
+ background-size: 110%;  
+} 
+.card8{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Australia/Australia_8_Coffs Harbour_Coffs Harbour Jetty.png?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card8:hover {
+  background-size: 110%;  
+} 
+
+
+    .carousel-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px;
+    }
+
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: max-content;
+    }
+
+    .row {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0px;
+    }
+    .text-box{
+      padding: 90% 0px 0px 0px;
+      color: white;
+      font-size: 15px;
+     font-weight: 700;
+    }
+
+    
+    .container {
+      padding-left: 0px 0px ;
+    
+    }
+
+    .country {
+     margin: 20px 0;
+    }

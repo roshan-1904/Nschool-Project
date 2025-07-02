@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{background-color: rgb(247, 244, 244);}
+h1{
+  padding: 0px 88px;
+  padding-top: 5%;
+  font-size: 24px;
+  font-weight: 700;
+}
+p{padding: 5px 88px;}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f0f0f0;
+      padding: 20px;
+    }
+.slider-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      gap: 16px;
+      padding: 10px 0px 0px 20%;
+      margin-bottom: 40px;
+      margin-left: 70px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; 
+    }
+.slider-wrapper::-webkit-scrollbar {display: none;}
+.card {
+       flex: 0 0 calc(50% - 10px);
+      background-image: url("https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/app/assets/Offer-Card-01.png?q=90" );
+      background-color: white;
+      border-radius: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       transition: background-size 0.9s ease;
+      scroll-snap-align: start;
+    
+     }
+  .card:hover { background-size: 110%;}
+.card1 {
+  background: cover;
+       flex: 0 0 calc(50% - 10px);
+      background-image: url("https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/app/assets/Offer-Card-04.png?q=90");
+      background-color: white;
+      border-radius: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       transition: background-size 0.9s ease;
+      scroll-snap-align: start;
+       background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-size 0.9s ease;
+     }
+  .card1:hover { background-size: 116%; }
+.card2 {
+  background: cover;
+       flex: 0 0 calc(50% - 10px);
+      background-image: url("https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/app/assets/Offer-Card-03.png?q=90");
+      background-color: white;
+      border-radius: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       transition: background-size 0.9s ease;
+      scroll-snap-align: start;
+       background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-size 0.9s ease;
+     }.card2:hover {background-size: 120%; }
+.card3 {
+  background: cover;
+       flex: 0 0 calc(50% - 10px);
+      background-image: url("https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/app/assets/Offer-Card-02.png?q=90" );
+      background-color: white;
+      border-radius: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       transition: background-size 0.9s ease;
+      scroll-snap-align: start;
+       background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-size 0.9s ease;
+     }.card3:hover {background-size: 130%; }
+    .para1{
+      padding-left: 18px;
+      padding-top: 10px;
+      padding-bottom: 0px;
+      font-size: 20px;
+      font-weight: 700;
+      }
+      .para2{
+       padding-left: 20px;
+       font-size: 20px;
+      font-weight: 700;
+      padding-top: 0px;
+      }.para3{
+        padding-left: 20px;
+        font-size: 13.5px;
+        padding-bottom: 0px;
+      }.para4{
+        padding-left: 20px;
+        font-size: 13.5px;
+        padding-top:0px ;
+      }
+      .Ripple-module__container{
+         width: 20%;
+         margin-top: 40px;
+         margin-left: 29px;
+         margin-bottom: 6px;
+         align-items: center;
+         padding: 3px 15px 3px 9px;
+         border-radius: 10px;
+         -webkit-tap-highlight-color: transparent;
+         bottom: 0;
+         cursor: pointer;
+         height: 100%;
+         left: 0;
+         overflow: hidden;
+         z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+         background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
+         background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+         background-position: 100% 100%;
+         color: white;
+         font-weight: 500;
+         font-family: inherit;
+         font-size: 15px;
+}  .Ripple-module__container:hover{
+   background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+}
+.Ripple-module__container1{
+         width: 20%;
+         margin-top: 75px;
+         margin-left: 29px;
+         margin-bottom: 0px;
+         align-items: center;
+         padding: 3px 15px 3px 9px;
+         border-radius: 10px;
+         -webkit-tap-highlight-color: transparent;
+         bottom: 0;
+         cursor: pointer;
+         overflow: hidden;
+         z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+         background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
+         background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+         background-position: 100% 100%;
+         color: white;
+         font-weight: 500;
+         font-family: inherit;
+         font-size: 15px;
+}  .Ripple-module__container1:hover{
+   background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+}
+.Ripple-module__container2{
+         width: 20%;
+         margin-top: 75px;
+         margin-left: 29px;
+         margin-bottom: 0px;
+         align-items: center;
+         padding: 3px 15px 3px 9px;
+         border-radius: 10px;
+         -webkit-tap-highlight-color: transparent;
+         bottom: 0;
+         cursor: pointer;
+         overflow: hidden;
+         z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+         background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
+         background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+         background-position: 100% 100%;
+         color: white;
+         font-weight: 500;
+         font-family: inherit;
+         font-size: 15px;
+}  .Ripple-module__container2:hover{
+   background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+}
+
+.Ripple-module__container3{
+         width: 20%;
+         margin-top: 35px; 
+         margin-left: 29px;
+         margin-bottom: 0px;
+         align-items: center;
+         padding: 3px 15px 3px 9px;
+         border-radius: 10px;
+         -webkit-tap-highlight-color: transparent;
+         bottom: 0;
+         cursor: pointer;
+         overflow: hidden;
+         z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+         background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
+         background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+         background-position: 100% 100%;
+         color: white;
+         font-weight: 500;
+         font-family: inherit;
+         font-size: 15px;
+}  .Ripple-module__container3:hover{
+   background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+}
+@media screen and (max-width: 768px){
+  h1{ padding: 0px 77px; font-size: 20px;} p{padding: 5px 77px;}
+   .para1{font-size: 14px;} .para2{font-size: 14px;}
+  .para3{font-size: 14px} .para4{ font-size: 14px;}
+ .card { flex: 0 0 calc(100%  - 10px);}  .card1 { flex: 0 0 calc(100%  - 10px);}
+  .card2 { flex: 0 0 calc(100%  - 10px);}  .card3 { flex: 0 0 calc(100%  - 10px);}
+  .Ripple-module__container1{ margin-top: 75px;}  .Ripple-module__container{margin-top: 48px; margin-left: 29px; margin-bottom: 35px;}
+}
+@media screen and (max-width: 426px){
+  h1{ padding: 0px 57px; font-size: 16px;} p{padding: 5px 57px; font-size: 6;}
+  .para1{font-size: 8px;} .para2{font-size: 8px;}
+  .para3{font-size: 8px} .para4{ font-size: 8px;}
+  .Ripple-module__container{ margin-top: 10px;  margin-left: 29px; margin-bottom: 30px; padding: 3px 15px 4px 6px;font-size: 9px;}
+  .Ripple-module__container1{ margin-top: 30px;  margin-left: 29px; margin-bottom: 16px; padding: 3px 15px 4px 6px;font-size: 9px;}
+  .Ripple-module__container2{ margin-top: 30px;  margin-left: 29px; margin-bottom: 16px; padding: 3px 15px 4px 6px;font-size: 9px;}
+  .Ripple-module__container3{ margin-top: 20px;  margin-left: 29px; margin-bottom: 16px; padding: 3px 15px 4px 6px;font-size: 9px;}
+  .card:hover {background-size: 170%;} .card1:hover {background-size: 170%;} .card2:hover {background-size: 170%;} .card3:hover {background-size: 170%;}
+}

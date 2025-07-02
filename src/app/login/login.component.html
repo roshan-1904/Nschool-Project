@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card Grid with Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .card {
+      flex: 1 0 calc(10% - 10px); /* Adjust for 10 cards in a row */
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .second-row .card {
+      flex: 1 0 calc(11.11% - 10px); /* Adjust for 9 cards in second row */
+    }
+
+    .button-group {
+      margin-top: 30px;
+    }
+
+    .open-button {
+      padding: 10px 20px;
+      margin: 10px 10px 0 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .open-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Card Grid</h2>
+
+  <!-- First Row: 10 Cards -->
+  <div class="card-container first-row">
+    <!-- 10 Cards -->
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+    <div class="card">Card 6</div>
+    <div class="card">Card 7</div>
+    <div class="card">Card 8</div>
+    <div class="card">Card 9</div>
+    <div class="card">Card 10</div>
+  </div>
+
+  <!-- Second Row: 9 Cards -->
+  <div class="card-container second-row">
+    <!-- 9 Cards -->
+    <div class="card">Card 11</div>
+    <div class="card">Card 12</div>
+    <div class="card">Card 13</div>
+    <div class="card">Card 14</div>
+    <div class="card">Card 15</div>
+    <div class="card">Card 16</div>
+    <div class="card">Card 17</div>
+    <div class="card">Card 18</div>
+    <div class="card">Card 19</div>
+  </div>
+
+  <!-- 7 Buttons -->
+  <div class="button-group">
+    <button class="open-button" onclick="openFile('file1.html')">Open File 1</button>
+    <button class="open-button" onclick="openFile('file2.html')">Open File 2</button>
+    <button class="open-button" onclick="openFile('file3.html')">Open File 3</button>
+    <button class="open-button" onclick="openFile('file4.html')">Open File 4</button>
+    <button class="open-button" onclick="openFile('file5.html')">Open File 5</button>
+    <button class="open-button" onclick="openFile('file6.html')">Open File 6</button>
+    <button class="open-button" onclick="openFile('file7.html')">Open File 7</button>
+  </div>
+
+  <script>
+    function openFile(filename) {
+      window.location.href = filename;
+    }
+  </script>
+
+</body>
+</html>

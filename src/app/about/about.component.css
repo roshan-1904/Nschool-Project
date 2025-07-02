@@ -1,0 +1,418 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body{
+  background-color: whitesmoke;
+}
+h1{
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 70px;
+}
+button{
+  border: 1px solid rgb(231, 229, 229);
+    margin: 20px 0px 20px 25px ;
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
+    background-color: white;
+
+}
+.country{
+  padding-left: 88px;
+}
+img{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 3px 0px;
+}
+
+button:hover {
+  background-color: rgba(236, 101, 101, 0.226);
+  border: 1px solid red;
+}
+
+
+/*  */
+
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding-left: 17px;
+    }
+
+    .country {
+     margin: 20px 0;
+    }
+
+  
+
+    .carousel-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px;
+    }
+
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: max-content;
+    }
+
+    .row {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0px;
+    }
+    .text-box{
+      padding: 90% 0px 0px 0px;
+      color: white;
+      font-size: 15px;
+     font-weight: 700;
+    }
+.hidden {
+  display: none;
+}
+   
+  .card1 {
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_London_London%20Eye.webp?w=330&h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+ }
+ .card1:hover {
+  transform: scale(1.1); 
+}
+ .card2 {
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Leicester_Leicester Cathedral.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+} 
+.card2:hover {
+  transform: scale(1.1); 
+}  
+.card3{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Liverpool_Liverpool Cathedral.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} 
+.card3:hover {
+  transform: scale(1.1); 
+} 
+.card4{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Sheffield_The+Crucible+Theatre.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card4:hover {
+  transform: scale(1.1); 
+}
+.card5{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Newcastle Upon Tyne_The Tyne River and Bridge.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card5:hover {
+  transform: scale(1.1); 
+}
+.card6{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Newcastle Upon Tyne_The Tyne River and Bridge.webp?w=330&amp;h=330"  );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card6:hover {
+  transform: scale(1.1); 
+}
+.card7{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Edinburg_Edinburgh Castle.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card7:hover {
+  transform: scale(1.1); 
+}
+.card8{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Plymouth_National Marine Aquarium.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card8:hover {
+  transform: scale(1.1); 
+}
+.card9{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Chester_Chester Cathedral.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card9:hover {
+  transform: scale(1.1); 
+}
+.card10{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Exeter_Exeter Cathedral.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card10:hover {
+  transform: scale(1.1); 
+}
+.card11{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Birmingham_Birmingham Museum and Art Gallery.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card11:hover {
+  transform: scale(1.1); 
+}
+.card12{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Nottingham_City Hall.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card12:hover {
+  transform: scale(1.1); 
+}
+.card13{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Coventry_Coventry Cathedral.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card13:hover {
+  transform: scale(1.1); 
+}
+.card14{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Leeds_Royal Armouries Museum.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card14:hover {
+  transform: scale(1.1); 
+}
+.card15{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Manchester_The Lowry.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card15:hover {
+  transform: scale(1.1); 
+}
+.card16{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Swansea_Swansea Marina.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card16:hover {
+  transform: scale(1.1); 
+}
+.card17{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Salford_University of Salford.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+    cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card17:hover {
+  transform: scale(1.1); 
+}
+.card18{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Aberdeen_St. Machar_s Cathedral.webp?w=330&amp;h=330" );
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+}
+.card18:hover {
+  transform: scale(1.1); 
+}
+
+ .card19 {
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/UK/UK_Lincoln_Lincoln%20Cathedral.webp?w=330&h=330");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+.card19:hover {
+  transform: scale(1.1); 
+}
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+ .carousel-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel-wrapper::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .carousel-wrapper {
+  overflow-x: scroll;            
+  white-space: nowrap;
+  padding: 10px;
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none;  
+  padding: 0px 120px;       
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none; 
+}
+
+
+

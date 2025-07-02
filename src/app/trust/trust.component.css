@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+     background: linear-gradient(115.43deg, #bcf0da 21.36%, #e9f9f2 53.12%, #bcf0da 88.67%) !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-bottom: 16px;
+    position: relative;
+}
+
+h1{
+    font-size: 25px;
+    padding: 55px 0px 0px 80px;
+    font-weight: 700;
+    float: left;
+}
+.TrustPilotBanner-module__readAllReviewsText {
+    color: var(--Semantic-neutral-8, #1f2a37);
+    cursor: pointer;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    margin-right: -16px;
+}
+/*  */
+
+.logo {
+    border: 0;
+    font: inherit;
+    font-size: 8px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    float: right;
+    /* background-color: green; */
+    margin-top: 1px;
+    padding: 3px 5px 3px 5px;
+}
+.reviews{
+    float: right;
+    font-size: 12px;
+    color: gray;
+    border: 1px solid rgb(192, 190, 190);
+    background-color: white;
+    border-radius: 3px;
+    padding: 3px 5px 3px 5px;
+}
+.bmw{
+    padding-top: 55px;
+    padding-right: 95px;
+    margin-left: 10px;
+}
+.card-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      gap: 18px;
+      padding-top: 5%;
+      padding: 20px  19% 0px 0px;
+      box-shadow: #b4eed6;
+    
+    }
+
+    .card-container::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .card {
+      flex: 0 0 30%;
+      scroll-snap-align: start;
+      background-color: #ffffff;
+      border: 1px solid #fffdfd;
+      border-radius: 8px;
+      padding: 13px;
+      min-width: 250px;
+     }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 80%;
+      }
+    }
+
+.carousel-wrapper{
+    padding: 50px 98px;
+}
+.para{
+    font-size: 16px;
+
+}
+.india{
+    padding-top: 10%;
+    float: left;
+    padding: 20% 10px 0px 0px;
+
+}
+.india-para{
+    float: right;
+    margin-right: 45%;
+    
+     position: relative;
+    bottom: 5px;
+    
+    }
+
+.india-para1{
+    font-size: 15px;
+    font-weight: 500;
+    color:rgb(58, 56, 56);
+}
+.india-para2{
+    font-size: 13px;
+    padding: 0px 0px 0px 0px;
+    color:rgb(58, 56, 56);
+}
+@media screen and (max-width: 768px){
+    
+}
+

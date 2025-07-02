@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+}
+.container{
+    padding: 40px 0px 0px 0px;
+}
+.title{
+     font-size: 25px;
+     font-weight: 800;
+}
+ body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .scroll-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      padding: 10px 20px;
+      
+    }
+
+    .scroll-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-right 30s linear infinite;
+     
+    }
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+    .card {
+      display: inline-block;
+      width: 130px;
+      height: 60px;
+      margin: 10px;
+      font-size: 24px;
+      text-align: center;
+      border-radius: 8px;
+      background-color: transparent;
+      border: none;
+    }
+
+    @keyframes scroll-right {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }

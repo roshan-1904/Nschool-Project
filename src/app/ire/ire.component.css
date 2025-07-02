@@ -1,0 +1,71 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+ .carousel-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px;
+    }
+
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: max-content;
+    }
+    .aus{
+      padding: 0px 0px 50px 0px;
+    }
+
+    .row {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0px;
+    }
+    .text-box{
+      padding: 90% 0px 0px 0px;
+      color: white;
+      font-size: 15px;
+     font-weight: 700;
+    }
+  .container {
+      padding-left: 0px 0px ;
+    
+    }
+.country {
+     margin: 20px 0;
+    }
+
+    .card1{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Ireland/Ireland_Dublin_Trinity College.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card1:hover {
+  background-size: 130%; 
+} 
+.card2{
+  background-image: url("https://prod-assets.amberstudent.com/regions/Popular-Cities/Ireland/Ireland_Cork_Blarney Castle.webp?w=330&amp;h=330");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+   cursor: grab;
+  transition: transform 0.3s ease;
+} .card2:hover {
+background-size: 130%;  
+} 

@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar{
+  width: 100%; 
+  
+ }
+.logo{
+  margin: 17px 0px 17px 30px;
+}
+
+.box1{
+    border: 2px solid rgb(0, 0, 0);
+}
+.searchModalMobile-module__searchInput{
+    padding:  5px 140% 5px 20px;
+    border-radius: 24px;
+    margin: 0px 0px 0px 30px;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+.navbar {
+    position: fixed;
+  top:-250px; 
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: top 0.1 ease-in-out;
+  z-index: 999;
+  }
+  .navbar.visible {
+  top: 0; 
+}
+ 
+
+  .eaderDesktop-module__container {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 13;}
+  
+  .logo {
+    height: 30px;
+    margin-right: 15px;
+  }
+  
+  .search-bar {
+    padding: 18px;
+    margin: 0px 0px 0px 50px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 13px;
+    text-align: left;
+    font-weight: 400;
+    appearance: none;
+    
+    vertical-align: baseline;
+    color: gray;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 40px;
+   
+  }
+ 
+  .search-bar{
+    width: 100%;
+    position: relative;
+    right: 35%;
+    padding: 10px 20px ;
+    margin: 0px 50px 0px 20px;
+    
+
+  }
+  .searchModalMobile-module__searchIcon{
+    position: absolute;
+    top:20px;
+    left: 36%;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 5px;
+  }
+  .loginlogo{
+    padding: 0px 0px 0px 0px ;
+    margin: 0px 0px 0px px ;
+  }
+  .login00{
+    border: 1px solid gray;
+    border-radius: 7px;
+    padding: 0px 12px;
+  }
+  
+  .login {
+    background-color: #fffbfa;
+    color: black;
+    
+    font-weight: 600;
+   
+    padding: 5px 15px 5px 10px;
+    
+  }
+  
+  .menu-button {
+    display: none;
+    background: none;
+    font-size: 20px;
+  }
+
+  .how1{
+     border: 1px solid gray;
+     padding: 0px 15px 0px 15px;
+     border-radius: 7px;
+     
+  }
+
+  .nav-button{
+    font-weight: 600;
+    font-size: 14px;
+    font-style: inherit;
+  }
+  /*  */
+ 
+  .fa-light{
+    padding: 10px 10px 10px 10px;
+  }
+  
+
+  
+.searchModalMobile-module__desktop .searchModalMobile-module__searchContainer .searchModalMobile-module__searchIcon {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    background-color: var(--whitelabel_primary_color, #ed3a56);
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    position: absolute;
+    right: 6px;
+    width: 28px;
+}
+.searchModalMobile-module__desktop .searchModalMobile-module__searchContainer .searchModalMobile-module__searchIcon {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    background-color: var(--whitelabel_primary_color, #ed3a56);
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    height: 28px;
+    justify-content: center;
+    position: absolute;
+    right: 6px;
+    width: 28px;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+i {
+    font-style: italic;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fff;
+    color: #555;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+:root {
+    --shine-degree: -120deg;
+    --shine-color: hsla(0, 0%, 100%, .4);
+    --shine-effect: linear-gradient(var(--shine-degree), transparent, var(--shine-color), transparent);
+    --shine-transition: all .65s ease-in-out;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.15}
+
+    /*  */
+    .searchModalMobile-module__searchIcon{
+      border: 2px solid #ed3a56;
+      background-color: #ed3a56;
+      border-radius: 25px;
+      margin: 0px 0px 0% 13.5%;
+      position: absolute;
+      top: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+   .navbar-left{padding: 0px 0px 0px 10px;}
+      input{ display: none;}
+      .searchModalMobile-module__searchIcon{display: none;}
+      .navbar-right{padding: 0px 13% 0px 0px; margin: 0;}
+   
+  
+}
+   
+    
+
+     @media screen and (max-width: 426px) {
+      .gow{display: none;}
+       .navbar-left{padding: 0px 0px 0px 5px;}
+        .navbar-right{padding: 0px 0% 0px 0px; margin: 0;}
+        
+    }

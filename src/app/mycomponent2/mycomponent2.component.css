@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    /* background-color: blue; */
+    align-content: center;
+    height: 500px;
+    position: relative;
+    top: 0px;
+}
+
+.blue{
+    padding: 0px 0px;
+}
+.mycomponrnt{
+    padding: 5% 88px  ;
+    padding-bottom: 5%;
+    display: flex;
+    gap: 10px;
+}
+
+.h1-1{
+    padding: 40px 0px 0px 88px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: inherit;
+}
+.para-1{
+    padding: 5px 0px 0px 85px;
+    font-family: inherit;
+}
+.h1{
+    font-weight: 700;
+    font-size: 17px;
+    padding-top: 10px;
+}
+.TrustScore{
+    color: #191919;
+}
+p{
+  
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .4%;
+    line-height: 18px;
+    margin-top: 8px;
+    text-align: left;
+    white-space: break-spaces;
+}
+    
+
+.card-1{
+    width: 25%;
+    float: left;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(237, 58, 86, .08) 0, rgba(237, 58, 86, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 112px
+}
+
+.card-2{
+    width: 25%;
+     float: left;
+     background: radial-gradient(50% 50% at 50% 50%, rgba(237, 58, 86, .08) 0, rgba(237, 58, 86, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 112px
+}.card-3{
+    width: 25%;
+     float: right;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(237, 58, 86, .08) 0, rgba(237, 58, 86, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 112px
+}.card-4{
+    width: 25%; 
+     float: right;
+     background: radial-gradient(50% 50% at 50% 50%, rgba(132, 225, 188, .1) 0, rgba(132, 225, 188, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 112px;
+}
+
+.tp-widget-profile-link {
+    display: block;
+    padding: 4px;
+}
+
+a {
+    color: #191919;
+    text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.tp-star__canvas{
+    color: aqua;
+    background-color: aqua;
+}
+.card-imag-4{
+    float: left;
+    width: 10%;
+}
+.Trustpilot{
+    float: right;
+    padding-right: 30%;
+    width: 70%;
+    position: relative;
+    right: 35px;
+    top: 0px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.TrustScore{
+    font-weight: 700;
+}
+@media screen and (max-width: 768px){
+    
+.h1{ font-size: 10px;}
+ p{font-size: 8px;}
+ .Trustpilot{
+  padding-right: 40%;
+  right: 0px;
+  top: 5px;
+  font-size: 15px;
+}
+}
+@media screen and (max-width: 426px) {
+.card-1{display: none;} .card-2{width: 50%;}
+.card-3{width: 50%;} .card-4{display: none;}
+
+}

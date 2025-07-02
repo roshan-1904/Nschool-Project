@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{ padding: 60px 0px;}
+h1{ font-size: 25px; }
+.head{font-weight: 700;}
+.para{
+    font-size: 15px;
+    color: rgb(95, 92, 92);
+}
+.contanier-class{
+    max-width: 500px;
+    flex: 1;
+     padding: 0px  0px 0px 88px;
+}
+.card1{
+    border: 1px solid gray;
+    width: 100%;
+    padding: 20px ;
+    border-radius: 10px;
+    margin: 0;
+    
+}
+.card2{
+    border: 1px solid gray;
+    width: 100%;
+    margin-right: 20px;
+    padding: 20px ;
+    border-radius: 10px;
+}
+.card3{
+    border: 1px solid gray;
+    width: 100%;
+    padding: 20px ;
+    border-radius: 10px;
+    padding-right: 30px;
+}
+.arrow-2{
+    width: 2%;
+    padding-right: 10px;
+}
+.arrow-1{
+    width: 2%;
+    padding-right: 40px;
+}
+.para-h1{
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+ .StepCard-module__stepNumber{
+    position: relative;
+    bottom: 100px;
+    right: 17px;
+   width: 11%;
+    
+ }
+.StepCard-module__stepNumber2{
+    position: relative;
+    bottom: 100px;
+    right: 17px;
+    width: 11%;
+}
+.StepCard-module__stepNumber3{
+    position: relative;
+    bottom: 100px;
+    right: 17px;
+    width: 11%;
+}
+.nummber{
+    padding: 5px 0px 5px 13px;
+    background-color: rgb(255, 249, 249);
+    border-radius: 25px;
+    border: 1px solid gray;
+    font-weight: 35px;
+}
+.arrow-2{
+    margin-top: 6%;
+    width: 2%;
+}
+.arrow-1{
+    margin-top: 6%;
+    width: 2%;
+}
+.saravanan{ display: flex;}
+.para01{font-size: 15px;
+    color: rgb(95, 92, 92);
+    padding-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    .container{padding: 30px 0px;}
+    .para-h1{
+    padding-top: 10px;
+    font-size: 10px;}
+    .para{
+    font-size: 8px;
+    color: rgb(95, 92, 92);
+}
+.para01{font-size: 8px;
+    color: rgb(95, 92, 92);
+    padding-bottom: 20px;
+}
+.arrow-2,.arrow-1{display: none;}
+.contanier-class{
+ max-width: 250px;
+ padding: 0px  0px 0px 78px;
+}
+.StepCard-module__stepNumber{
+    position: relative;
+    bottom: 90px;
+    right: 17px;
+   width: 20%;
+}
+.StepCard-module__stepNumber2{
+    position: relative;
+    bottom: 90px;
+    right: 17px;
+   width: 20%;
+}
+.StepCard-module__stepNumber3{
+    position: relative;
+    bottom: 90px;
+    right: 17px;
+   width: 20%;
+}
+}
+@media  (max-width: 426px) {
+ .head{font-size: 15px; padding: 0px 0px 0px 50px;}
+ p{font-size: 8; padding: 0px 0px 0px 50px;}
+ .para-h1{display: none;} .para{display: none;}.para01{display: none;}
+ .StepCard-module__stepNumber,.StepCard-module__stepNumber2,.StepCard-module__stepNumber3{
+    position: relative;
+    bottom: 50px;
+    right: 17px;
+   width: 40%;
+   } 
+   .card1{ width: 100%;padding: 10px 25px ;} .card2{ width: 100%;padding: 10px 25px ;} .card3{ width: 100%;padding: 10px 25px;} 
+   .contanier-class{
+    max-width: 500px;
+    flex: 1;
+     padding: 0px  0px 0px 48px;
+}
+}

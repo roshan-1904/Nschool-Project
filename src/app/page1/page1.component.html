@@ -1,0 +1,431 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horizontal Scroll Cards with Carousels</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body>
+
+<div class="container">
+  <h2 class="my-4">Continue Here You Left From</h2>
+  <div class="card-container">
+
+     <!-- card---no 1 -->
+  <div class="card" (click)="openProperty('1')" style="cursor: pointer;">
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+        <div class="big-button">
+    <button  class="button-dising" type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button  class="button-dising" type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button  class="button-dising" type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://assets.amberstudent.com/inventories/182943/4c2714b2.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto"  class="d-block w-100 card-img-top" alt="" >
+        </div>
+          <div class="carousel-item ">
+        <img  src="https://assets.amberstudent.com/inventories/182940/51b06e55.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="">
+          </div>
+
+      <div class="carousel-item">
+          <img  src="https://assets.amberstudent.com/inventories/182940/655e571d.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto"class="d-block w-100 card-img-top" alt="">
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">yugo alvarium, frankurt</h5>
+        <p class="card-text">frankurt am main,Hessen,DE</p>
+ <div class="from">from
+         <span class="money">€834/</span>
+         <span class="month">month</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">5.0
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">(6)</span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- card---no 2 -->
+    <div class="card">
+      <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+             <img  src="https://assets.amberstudent.com/inventories/143147/5f200a51.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto"  class="d-block w-100 card-img-top" alt="" >
+        </div>
+          <div class="carousel-item ">
+
+         <img  src="https://assets.amberstudent.com/inventories/143147/87a70984.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+          </div>
+
+      <div class="carousel-item">
+       
+           <img  src="https://assets.amberstudent.com/inventories/147166/49e276c6.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto"class="d-block w-100 card-img-top" alt="" >
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">iQ sterling Court,London</h5>
+        <p class="card-text">London,England,GB</p>
+
+        
+
+        <div class="from">from
+         <span class="money">€279/</span>
+         <span class="month">week</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">4.9
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">(10)</span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="card">
+      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+    <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+
+             <img  src="https://assets.amberstudent.com/inventories/262982/cb7bc1f3.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+        </div>
+          <div class="carousel-item ">
+
+         <img  src="https://assets.amberstudent.com/inventories/262982/cb7bc1f3.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+          </div>
+
+      <div class="carousel-item">
+          <img  src="https://assets.amberstudent.com/inventories/143147/9d930fc3.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">St.George Towers,New York</h5>
+        <p class="card-text">Kings County,New York,US</p>
+
+        
+
+        <div class="from">from
+         <span class="money">$1637/</span>
+         <span class="month">month</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">4.8
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">(4)</span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="carousel4" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+    <button type="button" data-bs-target="#carousel4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+ 
+             <img  src="https://assets.amberstudent.com/inventories/136692/8d66666d.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="">
+        </div>
+          <div class="carousel-item ">
+
+         <img  src="https://assets.amberstudent.com/inventories/136682/64c7b3ce.jpeg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+          </div>
+
+      <div class="carousel-item">
+
+        
+           <img  src="https://assets.amberstudent.com/inventories/143147/9d930fc3.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="">
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel4" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Chapter lslington,London</h5>
+        <p class="card-text">London,England,GB</p>
+
+        
+
+        <div class="from">from
+         <span class="money">£412/</span>
+         <span class="month">week</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">5.0
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">(7)</span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="card">
+      <div id="carousel5" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+    <button type="button" data-bs-target="#carousel5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+             <img  src="https://assets.amberstudent.com/inventories/963645/175b66df.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="">
+        </div>
+          <div class="carousel-item ">
+
+         <img  src="https://assets.amberstudent.com/inventories/136672/8b96c2d9.jpeg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="">
+          </div>
+
+      <div class="carousel-item">
+
+           <img  src="https://assets.amberstudent.com/inventories/136672/ca63b1e3.jpeg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel5" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel5" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Chapter Kings Cross,London</h5>
+        <p class="card-text">London,England,GB</p>
+
+        
+
+        <div class="from">from
+         <span class="money">£292</span>
+         <span class="month">week</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">4.7
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">(11)</span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="carousel6" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+          <div class="heart">
+          <svg width="17"  viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71875 15.875L7.70921 14.9907C6.17961 13.6643 4.91768 12.5221 3.92344 11.5641C2.92919 10.6062 2.14145 9.7549 1.5602 9.01034C0.978947 8.26637 0.573602 7.58842 0.344161 6.9765C0.11472 6.36516 0 5.74263 0 5.1089C0 3.85617 0.439914 2.80594 1.31974 1.95821C2.19896 1.11107 3.28865 0.6875 4.58882 0.6875C5.38421 0.6875 6.14137 0.867893 6.86028 1.22868C7.57919 1.59005 8.19868 2.10972 8.71875 2.78766C9.23882 2.10972 9.85831 1.59005 10.5772 1.22868C11.2961 0.867893 12.0533 0.6875 12.8487 0.6875C14.1488 0.6875 15.2385 1.11107 16.1178 1.95821C16.9976 2.80594 17.4375 3.85617 17.4375 5.1089C17.4375 5.74263 17.3228 6.36516 17.0933 6.9765C16.8639 7.58842 16.4586 8.26637 15.8773 9.01034C15.2961 9.7549 14.5083 10.6062 13.5141 11.5641C12.5198 12.5221 11.2579 13.6643 9.72829 14.9907L8.71875 15.875ZM8.71875 14.0843C10.1872 12.8169 11.3956 11.7263 12.3439 10.8125C13.2923 9.89874 14.0418 9.10643 14.5924 8.43556C15.1431 7.76527 15.5255 7.17222 15.7396 6.65639C15.9538 6.14056 16.0609 5.62473 16.0609 5.1089C16.0609 4.22462 15.7549 3.48772 15.1431 2.8982C14.5312 2.30868 13.7664 2.01392 12.8487 2.01392C12.1298 2.01392 11.4604 2.21288 10.8406 2.61081C10.2214 3.00873 9.73594 3.56141 9.38413 4.26883H8.05337C7.68627 3.54667 7.19679 2.99016 6.58495 2.59931C5.97311 2.20905 5.30773 2.01392 4.58882 2.01392C3.67105 2.01392 2.90625 2.30868 2.29441 2.8982C1.68257 3.48772 1.37664 4.22462 1.37664 5.1089C1.37664 5.62473 1.48372 6.14056 1.69786 6.65639C1.91201 7.17222 2.29441 7.76527 2.84507 8.43556C3.39572 9.10643 4.14523 9.89491 5.09359 10.801C6.04194 11.7077 7.25033 12.8021 8.71875 14.0843Z" fill="#6b7280">
+          </path>
+        </svg>
+        </div>
+    <button type="button" data-bs-target="#carousel6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel6" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+             <img  src="https://assets.amberstudent.com/inventories/1571368/1a4f4ff7.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+        </div>
+          <div class="carousel-item ">
+
+         <img  src="https://assets.amberstudent.com/inventories/1571042/77e54c1b.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto"  class="d-block w-100 card-img-top" alt=""  >
+          </div>
+
+      <div class="carousel-item">
+
+           <img  src="https://assets.amberstudent.com/inventories/1571042/d0a5954c.jpg?w=600&amp;fit=crop&amp;q=70&amp;auto=format&amp;trim=auto" class="d-block w-100 card-img-top" alt="" >
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel6" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel6" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+          <span class="visually-hidden">next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">864 Swanston,Melbourne</h5>
+        <p class="card-text">Carlton,Victoria,AU</p>
+
+        
+
+        <div class="from">from
+         <span class="money">AU$270</span>
+         <span class="month">week</span>
+        <div data-testid="property-page-gallery-trustpilot-badge" class="CompactInventoryCard-module__trustPilotBadge TrustPilotBadge-module__TrustpilotContainer" role="none">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">
+            <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan"></span>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+  </div>
+</div>
+
+</body>
+</html> 

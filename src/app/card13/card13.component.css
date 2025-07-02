@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(245, 245, 245);
+    font-family: sans-serif;
+    padding: 40px 0px;
+    height: 240px;
+}
+.contanier{
+    width: 100%;
+}
+.need{
+    float: left;
+    width: 31%;
+    padding: 45px 0px 0px 0px;
+}
+.box1{
+    font-size: 21px;
+    font-weight: 700;
+    color: #1f2a37;
+    font-style: normal;
+}
+.box2{
+    font-size: 16.5px;
+    color: #6b7280;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.want{
+    display: flex;
+    float: right;
+    width: 69%;
+    padding: 25px 0px 0px 0px;
+    height: 150px;
+    position: relative;
+    gap: 50px;
+}
+.card1{
+   border: 1px solid #fdc8d3;
+   width: 20%;
+   padding: 10px 0px  8px 0px ;
+   border-radius: 8px;
+   background-color: white;
+}
+.mins{
+    border: 1px solid #fdc8d3 ;
+    width: 13%;
+    background-color: #ed3a56;
+    color:white;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 3px 0px ;
+    border-radius: 4px;
+    position: absolute;
+    top: 14px;
+    left:  27px;
+}
+.ContactCard-module__whiteDot {
+    background: #fff;
+    border-radius: 50%;
+    color: inherit;
+    display: inline-block;
+    font-size: inherit;
+    height: 7px;
+    line-height: 1.55;
+    margin-right: 4px;
+    margin: 0px 0px 0px 5px;
+     -webkit-text-decoration: none;
+    text-decoration: none;
+    width: 7px;
+}.para{
+        color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 550;
+}
+.logo{
+    padding-left: 55px;
+}
+.card2{
+border: 1px solid #ace0ca;
+   width: 20%;
+   padding: 10px 0px  8px 0px ;
+   border-radius: 8px;
+   background-color: white;
+}
+
+.card3{
+border: 1px solid rgb(187, 184, 184);
+   width: 20%;
+   padding: 10px 0px  8px 0px ;
+   border-radius: 8px;
+   background-color: white;
+}
+.card4{
+border: 1px solid rgb(187, 184, 184);
+   width: 20%;
+   padding: 10px 0px  8px 0px ;
+   border-radius: 8px;
+   background-color: white;
+}
+.reply{
+    background-color:#046c4e;
+    width: 13%;
+    color:white;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 3px 0px ;
+    border-radius: 4px;
+    position: absolute;
+    top: 14px;
+    left:  30%;
+}
+.whatapp{
+    padding: 0px 0px 0px 50px;
+}
+.para2{
+      color: #4b5563;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    text-decoration: none;
+   margin-bottom: 30px;
+}
+.contant{
+    padding:20px 0px 0px 50px;
+}
+.para-01{
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 550;
+    padding-top: 20px;
+}
+ @media screen and (max-width: 768px) {
+ *{overflow-x: hidden;}
+.card3{display: none;} .card4{display: none;}
+.card1{width: 50%;} .card2{width: 50%;}
+.mins{ width: 26%;}.reply{ width: 26%; left:65%;}
+.need{ padding-top: 20px;}
+} 
+ @media screen and (max-width: 768px) {
+.box1{font-size: 18px;} .box1{font-size: 13px;}
+.para{font-size: 12px;}
+.logo{padding-left: 37px;}
+.mins{ display: flex; font-size: 8px; position: absolute; left: 20px;}
+.reply{ display: flex; font-size: 8px; }
+.whatapp{padding: 0px 0px 0px 37px;}
+ }

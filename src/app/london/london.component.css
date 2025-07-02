@@ -1,0 +1,274 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h2{
+  font-size: 25px;
+  font-weight: 700;
+  padding-top: 15px;
+}
+
+.card-container {
+      overflow-x: auto;
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
+      cursor: grab;
+    }
+
+    .card-container:active {
+      cursor: grabbing;
+    }
+
+    .card-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+     .img-1{
+      width: 100%;
+     }
+
+    .carousel-inner img {
+      height: 150px;
+      object-fit: cover;
+    }
+  
+     .card {
+      min-width: 250px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      opacity: 0.2sec;
+      max-width: 200px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+    .carousel-control-prev-icon,.carousel-control-next-icon{
+      padding: 0px 0px 0px 0px;
+      background-color: transparent;
+      color: white;
+      margin: 10px;
+      }
+  h5{
+    font-size: 15px;
+  }
+
+  p{
+    font-size: 12px;
+    padding: 0px 0px 25px 0px;
+  }
+  .money{
+    font-weight: 700;
+    font-size: 20px;
+  }
+  form{
+    width: 70%;
+    float: right;
+  }
+
+
+.CompactInventoryCard-module__trustPilotBadge{
+float: right;
+padding: 6px 0px 0px 0px;
+}
+
+
+.ShortListButton-module__shortlistButton {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    box-align: center;
+    box-pack: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 100%;
+    color: #000;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    font-size: 16px;
+    height: 32px;
+    justify-content: center;
+    margin: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    z-index: 8;
+}
+.heart{
+ 
+  padding: 2px 5px 2px 5px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  bottom:  100px;
+  left: 90%;
+}
+.heart:hover{
+background-color: rgb(255, 94, 0);
+
+}
+ 
+element.style {
+    background: linear-gradient(92deg, rgb(253, 254, 249) 17%, rgb(236, 248, 195) 78%, rgb(224, 243, 156) 100%);
+    color: rgb(127, 161, 6);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+}
+.PropertyTags-module__soldOutTag {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    background: linear-gradient(99.55deg, #fafafa 2.83%, #dbd9d9 84.73%);
+    border-radius: 99px;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+    color: #555;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 16px;
+    padding: 3px 8px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.PropertyTags-module__soldOutTag {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    background: linear-gradient(99.55deg, #fafafa 2.83%, #dbd9d9 84.73%);
+    border-radius: 99px;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+    color: #555;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 16px;
+    padding: 3px 8px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.gopi{top: 20px;}
+
+
+   .card9 {
+      position: relative;
+      width: 250px;
+      height: 300px;
+      background: url('https://via.placeholder.com/300x200') no-repeat center/cover;
+      border-radius: 12px;
+      overflow: hidden;
+       border-radius: 6px;
+    }
+
+    .card9::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(4px); 
+      background-color: rgba(150, 146, 146, 0.3); 
+      z-index: 1;
+       border-radius: 6px;
+    }
+
+    .see-all-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      z-index: 2;
+      cursor: pointer;
+       border-radius: 6px;
+    }
+
+    .see-all-btn:hover {
+      background-color: #fffefe;
+    }
+    .see-all-btn{
+        font-size: 20px;
+        color: #d1d5db;
+         border-radius: 6px;
+    }
+    .CompactInventoryCard-module__seeAllBtn {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: var(--whitelabel_primary_color, #ed3a56);
+    cursor: pointer;
+    display: inline-block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    height: 36px;
+    justify-content: center;
+    line-height: 1;
+    padding: 0 10px 0 16px;
+    position: absolute;
+    right: 40px;
+    text-align: left;
+    text-decoration: none;
+    top: 45%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: auto;
+     border-radius: 6px;
+}
