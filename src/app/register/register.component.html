@@ -1,0 +1,98 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<body>
+    <div class="form-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+    <h2> amber Register</h2>
+ <div class="row">
+      <div class="field-group">
+        <input formControlName="firstName" type="text" />
+        <label>First Name</label>
+        <div class="error" *ngIf="submitted && f['firstName'].errors">
+          <span *ngIf="f['firstName'].errors?.['required']">First name is required.</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <input formControlName="lastName" type="text" />
+        <label>Last Name</label>
+        <div class="error" *ngIf="submitted && f['lastName'].errors">
+          <span *ngIf="f['lastName'].errors?.['required']">Last name is required.</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="field-group">
+        <input formControlName="email" type="email" />
+        <label>Gmail</label>
+        <div class="error" *ngIf="submitted && f['email'].errors">
+          <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+          <span *ngIf="f['email'].value && !f['email'].value.includes('@gmail.com')">Must be a Gmail address.</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <input formControlName="phone" type="tel" />
+        <label>Phone Number</label>
+        <div class="error" *ngIf="submitted && f['phone'].errors">
+          <span *ngIf="f['phone'].errors?.['required']">Phone is required.</span>
+          <span *ngIf="f['phone'].errors?.['pattern']">Must be 10 digits.</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="field-group">
+        <input formControlName="password" type="password" />
+        <label>Password</label>
+        <div class="error" *ngIf="submitted && f['password'].errors">
+          <span *ngIf="f['password'].errors?.['required']">Password is required.</span>
+          <span *ngIf="f['password'].errors?.['minlength']">At least 6 characters.</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <input formControlName="confirmPassword" type="password" />
+        <label>Confirm Password</label>
+        <div class="error" *ngIf="submitted && f['confirmPassword'].errors">
+          <span *ngIf="f['confirmPassword'].errors?.['required']">Confirmation is required.</span>
+          <span *ngIf="f['confirmPassword'].errors?.['mustMatch']">Passwords must match.</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="field-group">
+        <select formControlName="country">
+          <option value="" disabled>Select Country</option>
+          <option *ngFor="let c of countries">{{ c }}</option>
+        </select>
+        <label>Country</label>
+        <div class="error" *ngIf="submitted && f['country'].errors">
+          <span *ngIf="f['country'].errors?.['required']">Country is required.</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <select formControlName="state">
+          <option value="" disabled>Select State</option>
+          <option *ngFor="let s of states">{{ s }}</option>
+        </select>
+        <label>State</label>
+        <div class="error" *ngIf="submitted && f['state'].errors">
+          <span *ngIf="f['state'].errors?.['required']">State is required.</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <button type="submit" class="submit-btn">Register</button>
+
+    <div *ngIf="responseMsg" class="response">{{ responseMsg }}</div>
+  </form>
+</div>
+</body>

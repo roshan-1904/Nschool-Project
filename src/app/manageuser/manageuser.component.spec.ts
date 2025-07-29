@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertyDetailComponent } from './property-detail.component';
+import { ManageuserComponent } from './manageuser.component';
 
-describe('PropertyDetailComponent', () => {
-  let component: PropertyDetailComponent;
-  let fixture: ComponentFixture<PropertyDetailComponent>;
+describe('ManageuserComponent', () => {
+  let component: ManageuserComponent;
+  let fixture: ComponentFixture<ManageuserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PropertyDetailComponent ]
+      declarations: [ ManageuserComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PropertyDetailComponent);
+    fixture = TestBed.createComponent(ManageuserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

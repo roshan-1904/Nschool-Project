@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { Page1Component } from './page1/page1.component';
 import { AboutComponent } from './about/about.component';
@@ -33,8 +32,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UktouchComponent } from './uktouch/uktouch.component';
 import { IretouchComponent } from './iretouch/iretouch.component';
 import { CantouchComponent } from './cantouch/cantouch.component';
-import { Details1Component } from './details1/details1.component';
-import { PropertyDetailComponent } from './property-detail/property-detail.component';
+
+import { Component1Component } from './component1/component1.component';
+import { MainComponent } from './main/main.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RoomBookingComponent } from './room-booking/room-booking.component';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { BookingComponent } from './booking/booking.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { RegisterconstmerComponent } from './registerconstmer/registerconstmer.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookingconstmerComponent } from './bookingconstmer/bookingconstmer.component';
+import { CategoriesComponent } from './categories/categories.component';
+
+
+
 
 
 
@@ -42,7 +59,7 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    
     HomeComponent,
     Page1Component,
     AboutComponent,
@@ -71,8 +88,24 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
     UktouchComponent,
     IretouchComponent,
     CantouchComponent,
-    Details1Component,
-    PropertyDetailComponent,
+  
+    Component1Component,
+       MainComponent,
+       RoomBookingComponent,
+       RegisterComponent,
+       LoginComponent,
+       BookingComponent,
+       AdminComponent,
+       ManageuserComponent,
+       RegisterconstmerComponent,
+       DashboardComponent,
+       BookingconstmerComponent,
+       CategoriesComponent,
+  
+    
+  
+   
+   
   
     
     
@@ -80,7 +113,10 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

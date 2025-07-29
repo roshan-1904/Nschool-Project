@@ -1,0 +1,330 @@
+<!-- <!-- <div class="glass-container">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" novalidate class="glass-form">
+    <h2>Room Booking</h2>
+
+   
+    <div class="field-group">
+      <input formControlName="name" type="text" required />
+      <label>Name</label>
+      <div class="error" *ngIf="submitted && f['name'].errors">Name is required.</div>
+    </div>
+
+   
+    <div class="field-group">
+      <input formControlName="email" type="email" required />
+      <label>Email</label>
+      <div class="error" *ngIf="submitted && f['email'].errors">
+        <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+        <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+
+   
+    <div class="field-group">
+      <input formControlName="phone" type="tel" required />
+      <label>Phone Number</label>
+      <div class="error" *ngIf="submitted && f['phone'].errors">Phone number must be 10 digits.</div>
+    </div>
+
+    <div class="field-group">
+      <input formControlName="location" type="text" required />
+      <label>Location</label>
+      <div class="error" *ngIf="submitted && f['location'].errors">Location is required.</div>
+    </div>
+
+
+
+<div *class="field-group">
+  <label>AC Type</label>
+  <select formControlName="acType" required>
+    <option value="" disabled>Select AC Type</option>
+    <option  value="AC">AC</option>
+    <option value="Non-AC">Non-AC</option>
+  </select>
+  <div *ngIf="submitted && f['acType'].errors" class="error">
+    Please select an AC Type
+  </div>
+</div>
+
+
+    <div class="field-group">
+      <label class="section-label">Bed Type</label>
+      <select formControlName="bedType">
+        <option value="">Select</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+      </select>
+    </div>
+
+    
+    <div class="field-group">
+      <label class="section-label">Booking Date</label>
+      <input type="date" formControlName="bookingDate"/>
+    </div>
+
+    <div class="field-group radio-group">
+      <label class="section-label">Accommodation</label>
+      <label><input type="radio" value="PG" formControlName="accommodation" /> PG</label>
+      <label><input type="radio" value="Hostel" formControlName="accommodation" /> Hostel</label>
+      <label><input type="radio" value="private room" formControlName="accommodation" /> private room</label>
+    </div>
+
+    <div class="field-group">
+      <label class="section-label">Payment Mode</label>
+      <select formControlName="paymentMode">
+        <option value="">Select</option>
+        <option value="Net Banking">Net Banking</option>
+        <option value="Cash">Cash</option>
+      </select>
+    </div>
+
+    
+    <div class="field-group">
+      <label class="section-label">Package</label>
+      <select formControlName="packageType">
+        <option value="">Select</option>
+        <option value="Silver">Silver</option>
+        <option value="Gold">Gold</option>
+        <option value="Platinum">Platinum</option>
+      </select>
+    </div>
+
+ 
+    <div class="field-group radio-group">
+      <label class="section-label">User Type</label>
+      <label><input type="radio" value="Student" formControlName="userType" /> Student</label>
+      <label><input type="radio" value="Non-Student" formControlName="userType" /> Non-Student</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Booking</button>
+    <div class="response" *ngIf="msg">{{ msg }}</div>
+  </form>
+</div> -->
+
+<!-- <div class="glass-container">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" novalidate class="glass-form">
+    <h2>Room Booking</h2>
+
+   
+    <div class="field-group">
+      <input formControlName="name" type="text" required />
+      <label>Name</label>
+      <div class="error" *ngIf="submitted && f['name'].errors">Name is required.</div>
+    </div>
+
+   
+    <div class="field-group">
+      <input formControlName="email" type="email" required />
+      <label>Email</label>
+      <div class="error" *ngIf="submitted && f['email'].errors">
+        <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+        <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+
+   
+    <div class="field-group">
+      <input formControlName="phone" type="tel" required />
+      <label>Phone Number</label>
+      <div class="error" *ngIf="submitted && f['phone'].errors">Phone number must be 10 digits.</div>
+    </div>
+
+    <div class="field-group">
+      <input formControlName="location" type="text" required />
+      <label>Location</label>
+      <div class="error" *ngIf="submitted && f['location'].errors">Location is required.</div>
+    </div>
+
+
+
+<div *class="field-group">
+  <label>AC Type</label>
+  <select formControlName="acType" required>
+    <option value="" disabled>Select AC Type</option>
+    <option  value="AC">AC</option>
+    <option value="Non-AC">Non-AC</option>
+  </select>
+  <div *ngIf="submitted && f['acType'].errors" class="error">
+    Please select an AC Type
+  </div>
+</div>
+
+
+    <div class="field-group">
+      <label class="section-label">Bed Type</label>
+      <select formControlName="bedType">
+        <option value="">Select</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+      </select>
+    </div>
+
+    
+    <div class="field-group">
+      <label class="section-label">Booking Date</label>
+      <input type="date" formControlName="bookingDate"/>
+    </div>
+
+    <div class="field-group radio-group">
+      <label class="section-label">Accommodation</label>
+      <label><input type="radio" value="PG" formControlName="accommodation" /> PG</label>
+      <label><input type="radio" value="Hostel" formControlName="accommodation" /> Hostel</label>
+      <label><input type="radio" value="private room" formControlName="accommodation" /> private room</label>
+    </div>
+
+    <div class="field-group">
+      <label class="section-label">Payment Mode</label>
+      <select formControlName="paymentMode">
+        <option value="">Select</option>
+        <option value="Net Banking">Net Banking</option>
+        <option value="Cash">Cash</option>
+      </select>
+    </div>
+
+    
+    <div class="field-group">
+      <label class="section-label">Package</label>
+      <select formControlName="packageType">
+        <option value="">Select</option>
+        <option value="Silver">Silver</option>
+        <option value="Gold">Gold</option>
+        <option value="Platinum">Platinum</option>
+      </select>
+    </div>
+
+ 
+    <div class="field-group radio-group">
+      <label class="section-label">User Type</label>
+      <label><input type="radio" value="Student" formControlName="userType" /> Student</label>
+      <label><input type="radio" value="Non-Student" formControlName="userType" /> Non-Student</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Booking</button>
+    <div class="response" *ngIf="msg">{{ msg }}</div>
+  </form>
+</div>  -->
+
+
+<div class="glass-container">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" novalidate class="glass-form">
+    <h2>Room Booking</h2>
+
+    <div class="field-group">
+      <input formControlName="name" type="text" />
+      <label>Name</label>
+      <div class="error" *ngIf="submitted && f['name'].errors">Name is required.</div>
+    </div>
+
+    <div class="field-group">
+      <input formControlName="email" type="email" />
+      <label>Email</label>
+      <div class="error" *ngIf="submitted && f['email'].errors">
+        <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+        <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <input formControlName="phone" type="tel" />
+      <label>Phone Number</label>
+      <div class="error" *ngIf="submitted && f['phone'].errors">Phone number must be 10 digits.</div>
+    </div>
+
+    <div class="field-group">
+      <input formControlName="location" type="text" />
+      <label>Location</label>
+      <div class="error" *ngIf="submitted && f['location'].errors">Location is required.</div>
+    </div>
+
+    <div *ngIf="f['acType'].enabled" class="field-group">
+  <label>AC Type</label>
+  <select formControlName="acType">
+    <option value="" disabled>Select AC Type</option>
+    <option value="AC">AC</option>
+    <option value="Non-AC">Non-AC</option>
+  </select>
+  <div *ngIf="submitted && f['acType'].errors" class="error">Please select an AC Type</div>
+</div>
+
+
+    <div class="field-group">
+      <label>Bed Type</label>
+      <select formControlName="bedType">
+        <option value="">Select</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label>Booking Date</label>
+      <input type="date" formControlName="bookingDate" />
+    </div>
+
+    <div class="field-group radio-group">
+      <label>Accommodation</label>
+      <label><input type="radio" value="PG" formControlName="accommodation" /> PG</label>
+      <label><input type="radio" value="Hostel" formControlName="accommodation" /> Hostel</label>
+      <label><input type="radio" value="private room" formControlName="accommodation" /> Private Room</label>
+    </div>
+
+    <div class="field-group">
+      <label>Payment Mode</label>
+      <select formControlName="paymentMode">
+        <option value="">Select</option>
+        <option value="Net Banking">Net Banking</option>
+        <option value="Cash">Cash</option>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label>Package</label>
+      <select formControlName="packageType">
+        <option value="">Select</option>
+        <option value="Silver">Silver</option>
+        <option value="Gold">Gold</option>
+        <option value="Platinum">Platinum</option>
+      </select>
+    </div>
+    <!-- <div class="field-group">
+  <label>Room Variety</label>
+  <select formControlName="roomVariety">
+    <option value="" disabled>Select Room Variety</option>
+    <option value="Deluxe">Deluxe</option>
+    <option value="Super Deluxe">Super Deluxe</option>
+  </select>
+  <div *ngIf="submitted && f['roomVariety'].errors" class="error">
+    Please select a Room Variety
+  </div>
+</div> -->
+<div class="field-group" *ngIf="showRoomVariety">
+  <label>Room Variety</label>
+  <select formControlName="roomVariety">
+    <option value="" disabled>Select Room Variety</option>
+    <option value="Luxury">Luxury</option>
+    <option value="Budget">Budget</option>
+    <option value="Business">Business</option>
+    <option value="Resort">Resort</option>
+    <option value="Boutique">Boutique</option>
+    <option value="Heritage">Heritage</option>
+    <option value="Airport Hotel">Airport Hotel</option>
+    <option value="Extended Stay">Extended Stay</option>
+    <option value="Eco Hotel">Eco Hotel</option>
+    <option value="Hostel">Hostel</option>
+  </select>
+  <div *ngIf="submitted && f['roomVariety'].errors" class="error">
+    Please select a Room Variety
+  </div>
+</div>
+
+
+    <div class="field-group radio-group">
+      <label>User Type</label>
+      <label><input type="radio" value="Student" formControlName="userType" /> Student</label>
+      <label><input type="radio" value="Non-Student" formControlName="userType" /> Non-Student</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Booking</button>
+    <div class="response" *ngIf="msg">{{ msg }}</div>
+  </form>
+</div>

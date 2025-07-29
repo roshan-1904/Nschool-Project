@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <h2>{{ isEditMode ? 'Edit Hotel' : 'Add New Hotel' }}</h2>
+
+  <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="form">
+    <input formControlName="hotelName" placeholder="Hotel Name" />
+    <input formControlName="location" placeholder="Location" />
+    <input formControlName="amount" type="number" placeholder="Amount" />
+    <input formControlName="currency" placeholder="Currency" />
+    <input formControlName="rating" type="number" placeholder="Rating" step="0.1" />
+    <input formControlName="reviewCount" type="number" placeholder="Review Count" />
+    <textarea formControlName="roomDescription" placeholder="Room Description"></textarea>
+    <input formControlName="imageUrls" placeholder="Image URLs (comma separated)" />
+
+    <button type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
+    <button type="button" (click)="resetForm()">Clear</button>
+  </form>
+
+  <hr />
+  <div *ngIf="hotels.length > 0">
+  <h3>Hotel List</h3>
+  <div class="cards-container">
+    <div *ngFor="let hotel of hotels" class="card">
+      <h4>{{ hotel.hotelName }} - {{ hotel.location }}</h4>
+      <p>€{{ hotel.amount }} | Rating: {{ hotel.rating }} ({{ hotel.reviewCount }} reviews)</p>
+      <p>{{ hotel.roomDescription }}</p>
+
+      <button (click)="editHotel(hotel)">Edit</button>
+      <button (click)="deleteHotel(hotel._id!)">Delete</button>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

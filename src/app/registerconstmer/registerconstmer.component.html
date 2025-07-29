@@ -1,0 +1,125 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Customers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="registerconstmer.component.css">
+</head>
+<body>
+
+ <div class="title">
+            <h2> Customers</h2>
+            <div class="box">
+            <p class="home">Home ></p>
+            <p class="Dashboard">Customers</p>
+            </div>
+        </div>
+
+<div class="main-layout">
+
+  <div class="table-section">
+
+    <div class="Customer-list">
+       <div class="img">
+        <img src="   https://cdn-icons-png.flaticon.com/512/151/151917.png " width="16" height="19"  a class="img-small ms-3">
+        <p class="list">Customer List</p>
+       </div>
+    </div>
+<div class="top-bar">
+  <div class="global-search">
+    <div class="search-input-wrapper">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/566/566737.png"
+        width="16"
+        height="16"
+        alt="search icon"
+        class="search-icon"
+      />
+      <input [(ngModel)]="globalSearchText" placeholder="Search by any field..." />
+    </div>
+  </div>
+
+  <div class="pagination-controls">
+    <label for="itemsPerPage">Show:</label>
+    <select id="itemsPerPage" [(ngModel)]="itemsPerPage" (change)="changePage(1)">
+      <option [value]="10">10 per page</option>
+      <option [value]="15">15 per page</option>
+      <option [value]="20">20 per page</option>
+    </select>
+  </div>
+</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Location</th>
+          <th>Registered On</th>
+          <th>Update</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of paginatedUsers(); let i = index">
+          <ng-container *ngIf="editIndex === ((currentPage - 1) * itemsPerPage + i); else viewRow">
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>
+              <input [(ngModel)]="editedUser.firstName" placeholder="First Name" />
+              <input [(ngModel)]="editedUser.lastName" placeholder="Last Name" />
+            </td>
+            <td><input [(ngModel)]="editedUser.email" placeholder="Email" /></td>
+            <td><input [(ngModel)]="editedUser.phone" placeholder="Phone" /></td>
+            <td>
+              <input [(ngModel)]="editedUser.state" placeholder="State" />
+              <input [(ngModel)]="editedUser.country" placeholder="Country" />
+            </td>
+            <td>{{ editedUser.date | date: 'short' }}</td>
+            <td><button (click)="saveEdit((currentPage - 1) * itemsPerPage + i)">Save</button></td>
+            <td><button (click)="cancelEdit()">Cancel</button></td>
+          </ng-container>
+
+          <ng-template #viewRow>
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>{{ user.firstName }} {{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.state }}, {{ user.country }}</td>
+            <td>{{ user.date | date: 'short' }}</td>
+            <td><button (click)="startEdit(user, (currentPage - 1) * itemsPerPage + i)">Edit</button></td>
+            <td><button (click)="deleteUser(user)">Delete</button></td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="excel-sheet">
+      <button (click)="exportToExcel()">Download Excel</button>
+    </div>
+  </div>
+  <div class="form-section">
+     <div class="Customer-list">
+       <div class="img">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747968.png" width="20" height="19"  a class="img-small ms-3">
+        <p class="list">Add New costomer</p>
+       </div>
+    </div>
+    <div class="form-container">
+      <input [(ngModel)]="newUser.firstName" placeholder="First Name" />
+      <input [(ngModel)]="newUser.lastName" placeholder="Last Name" />
+      <input [(ngModel)]="newUser.email" placeholder="Email" />
+      <input [(ngModel)]="newUser.phone" placeholder="Phone" />
+      <input [(ngModel)]="newUser.state" placeholder="State" />
+      <input [(ngModel)]="newUser.country" placeholder="Country" />
+      <button class="gow" (click)="addUser()">Submit</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

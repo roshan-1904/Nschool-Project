@@ -1,13 +1,32 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { Page1Component } from './page1/page1.component';
-import { PropertyDetailComponent } from './property-detail/property-detail.component';
+import { Component, NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'
+import { Component1Component } from './component1/component1.component';
+import { MainComponent } from './main/main.component';
+
+    
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { BookComponent } from './book/book.component';
+import { BookingComponent } from './booking/booking.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+
+     
+     
+
+
+
 const routes: Routes = [
- { path: '', component: HomeComponent },
-  { path: 'page1', component: Page1Component },
-  { path: 'property/:id', component: PropertyDetailComponent },
-  { path: '**', redirectTo: '' }
+   {path:'',component:MainComponent},
+  { path: 'component1/:id', component: Component1Component },
+  
+     { path: 'register', component: RegisterComponent },
+     { path: 'login', component: LoginComponent},
+     { path: 'booking', component: BookingComponent },
+     { path: 'home', component: HomeComponent },
+       { path: 'admin', component: AdminComponent },
+       { path: '', redirectTo: '/register', pathMatch: 'full' },
+       
 ];
 
 @NgModule({

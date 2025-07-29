@@ -1,0 +1,468 @@
+body{
+  padding: 0px 540px;
+    height: 420px;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+font-family: Arial, sans-serif;
+  padding: 40px;
+ background-color: white;
+   margin: 0px 0px 20% 0px;
+    height: 0px;
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+     scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 610px;
+  overflow-y: auto;
+  background: #f0f4f8;
+  color: #333;
+}
+.container {
+  
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  height: 100%;
+  overflow-y: auto;
+   scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.booking-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.booking-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.booking-form-grid input,
+.booking-form-grid select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.pagination-wrapper label {
+  white-space: nowrap;
+}
+
+.pagination-select {
+  height: 32px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 0 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.booking-table thead th,
+.booking-table tbody td {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.booking-table thead th {
+  background-color: #f1f1f1;
+  font-weight: 600;
+}
+
+.booking-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.action-buttons button:hover {
+  opacity: 0.9;
+}
+
+.btn-edit {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-next {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-next:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.btn-next:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.download-excel {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.btn-excel {
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 18px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-excel:hover {
+  background-color: #117a8b;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .booking-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-table thead {
+    font-size: 12px;
+  }
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.booking-form input, 
+.booking-form select {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+  padding: 30px 0px 0px 0px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0px 0px 0px 0px;
+}
+.table-wrapper {
+  flex: 0 0 60%;
+  overflow-x: auto;
+  
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 2px;
+  text-align: left;
+  font-size: 10px;
+}
+
+.booking-table th {
+  background-color: #1e90ff;
+  color: white;
+  font-weight: 600;
+}
+
+.action-buttons button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #28a745;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+
+.booking-form {
+  flex: 0 0 35%;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.booking-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #1c86ee;
+}
+
+.btn-next, .btn-excel {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-next[disabled] {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-next:hover:not([disabled]),
+.btn-excel:hover {
+  background-color: #0056b3;
+}
+
+.download-excel {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.title{
+  display: flex;
+}
+.box{
+  display: flex;
+  padding: 10px 0px 0px 20px;
+}
+.Customer-list{
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.img{
+  display: flex;
+  background-color: whitesmoke;
+  padding: 10px 10px;
+  width: 100%;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 8px;
+  width: 300px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.pagination-dropdown {
+  margin-bottom: 10px;
+}
+
+.pagination-dropdown select {
+  padding: 5px;
+  margin-left: 6px;
+}
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 8px;
+  font-size: 14px;
+  width: 280px;
+}
+
+.pagination-dropdown label {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.pagination-dropdown select {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input-with-icon input {
+  padding-left: 30px; /* space for the icon */
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  position: absolute;
+  top: 40%;
+  left: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

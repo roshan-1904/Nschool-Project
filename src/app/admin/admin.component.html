@@ -1,0 +1,222 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <div class="admin">
+   <div class="main-contaner">
+       <div class="dashbord">
+           <div class="logo">
+            <img height="24" width="100" src="https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/components/Header/assets/amber-logo-dark.svg" >
+            
+           </div>
+ 
+  <div  class="modules dashboard-module" 
+  [ngClass]="{'active-module': selectedComponent === 'dashboard'}"
+  (mouseenter)="onComponentHover('dashboard', true)" 
+    (mouseleave)="onLeave('dashboard')">
+    <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=16" srcset="https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=16 1x, https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=12 3x">
+
+   <span class="module-title">Dashboard </span>
+  </div>
+
+  <div  class="modules dashboard-module" 
+  [ngClass]="{'active-module': selectedComponent === 'registerconstmer'}"
+      (mouseenter)="onComponentHover('registerconstmer', true)" 
+    (mouseleave)="onLeave('registerconstmer')">
+    <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/16170/16170021.png">
+    <span class="module-title">user modules </span>
+    <div class="dashboard-hover-box" id="dropdown">
+    </div>
+  </div>
+
+       <div class="modules dashboard-module" onclick="toggleDropdown()">
+            <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/4635/4635381.png ">
+                <span class="module-title"> Room Details </span>
+                           <div class="dashboard-hover-box" id="dropdown" >
+    <ul>
+        <li class="size module-title"
+    (mouseenter)="onSubComponentHover('categories', true)"
+    (mouseleave)="onLeave('component')">
+    <img alt="Free Dashboard Icon" class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/17456/17456673.png">
+    Categories
+</li>
+
+
+        
+      <li class="size module-title"
+         >
+         <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/489/489870.png">
+        Room details</li>
+
+        
+       <li class="size module-title"
+       (mouseenter)="onSubComponentHover('manageuser', true)"
+        (mouseleave)="onLeave('component')" >
+              <img class="icon" width="16"
+                   src="https://cdn-icons-png.flaticon.com/512/17335/17335867.png">
+              Manage Page
+            </li>
+
+    </ul>
+  </div>
+                </div>
+
+
+
+         <div class="modules dashboard-module "
+         (mouseenter)="onSubComponentHover('bookingconstmer', true)"
+          (mouseleave)="onLeave('component')">
+           <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/9155/9155961.png">
+           <span class="module-title">Booking </span>
+          </div>
+                </div>
+                
+   </div>
+   
+  </div>
+
+<div class="component-container"
+     (mouseenter)="isHoveringComponent = true"
+     (mouseleave)="onLeave('component')">
+
+  <app-dashboard *ngIf="!selectedSubComponent && selectedComponent === 'dashboard'"></app-dashboard>
+  <app-registerconstmer *ngIf="!selectedSubComponent && selectedComponent === 'registerconstmer'"></app-registerconstmer>
+
+        
+      <app-manageuser *ngIf="selectedSubComponent === 'manageuser'"></app-manageuser>
+      <app-bookingconstmer *ngIf="selectedSubComponent === 'bookingconstmer'"></app-bookingconstmer>
+      <app-categories *ngIf="selectedSubComponent === 'categories'"></app-categories>
+</div>
+
+
+
+<!-- Display Components -->
+<!-- <div   *ngIf="selectedComponent === 'dashboard'"
+class="component-container"  
+
+(mouseenter)= "isHoveringComponent = true"  
+ (mouseleave)="onLeave('component')"  >
+  <app-dashboard></app-dashboard>
+</div>
+
+<div   *ngIf="selectedComponent === 'registerconstmer'" 
+class="component-container" 
+ (mouseenter)="isHoveringComponent = true" 
+  (mouseleave)="onLeave('component')" >
+  <app-registerconstmer></app-registerconstmer>
+</div>
+
+         
+   <div class="content-display">
+  <app-dashboard *ngIf="!selectedSubComponent"></app-dashboard>
+  <app-manageuser *ngIf="selectedSubComponent === 'manageuser'"></app-manageuser>
+</div> -->
+     
+
+
+
+
+               <!-- <div class="modules-wrapper">
+  <button class="modules" (click)="toggleDropdown()">Modules ▼</button>
+  <div class="dropdown" *ngIf="dropdownVisible">
+    <ul>
+      <li>Dashboard</li>
+      <li>User</li>
+      <li>Rooms</li>
+      <li>Booking</li>
+      <li>Report</li>
+    </ul>
+  </div>
+</div> -->
+<!-- 
+<div class="modules-wrapper">
+  <button class="modules1" (click)="toggleDashboardDropdown()">Dashboard Module ▼</button>
+
+  <div class="dropdown" *ngIf="dashboardDropdownVisible">
+    <ul>
+      <li (click)="toggleDashboardSubDropdown()" class="has-sub">
+        Dashboard ▼
+        <ul class="sub-dropdown" *ngIf="dashboardSubDropdownVisible">
+          <li>Number of Enquiry</li>
+          <li>Number of Rooms</li>
+          <li>Booking Rooms</li>
+          <li>Free Rooms</li>
+          <li>Cancelled Booking</li>
+        </ul>
+      </li>
+
+      
+      <li (click)="toggleUserSubDropdown()" class="has-sub">
+        User Module ▼
+        <ul class="sub-dropdown" *ngIf="userSubDropdownVisible">
+          <li (click)="showCountry('registerconstmer')">Customer Register ID</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<!-- 
+  <div class="manage-user">
+      <button  class="modules2" (click)="showCountry('manageuser')">Manage User ▼</button>
+    </div> -->
+
+   <!-- <div class="modules-wrapper">
+  <button class="modules3" (click)="toggleRoomDropdown()">Room details ▼</button>
+  <div class="dropdown" *ngIf="roomdropdownVisible">
+    <ul>
+      <li>Categories</li>
+      <li>Room Details</li>
+      <li>Manage Page</li>
+    </ul>
+  </div>
+</div> -->
+
+
+<!-- <div class="manage-user">
+      <button  class="modules4" (click)="showCountry('booking-datails')"> Bookings▼</button>
+    </div> -->
+
+
+            
+       <!-- </div>
+</div>
+<app-manageuser *ngIf="selectedCountry === 'manageuser'"></app-manageuser>
+<app-registerconstmer *ngIf="selectedCountry== 'registerconstmer'"></app-registerconstmer>
+<app-booking-datails *ngIf = "selectedCountry == 'booking-datails'"></app-booking-datails> -->
+
+
+
+
+
+
+
+
+
+<!-- <li class="size"   >register from</li> usermodul
+      <li class="size">manage user</li> -->
+
+
+
+
+ <!-- <div class="dashboard-hover-box" id="dropdown">
+    <ul>
+      <li class="size">Number of Enquiries</li>   dash board
+      <li class="size">New Enquiries</li>
+      <li class="size">Total Amount</li>
+      <li class="size">Booked Rooms</li>
+      <li class="size">Free Rooms</li>
+      <li class="size">Cancelled Bookings</li>
+    </ul>
+  </div> -->
+
+
+
+       <!-- <div class="modules">Dashbord -->
+                  <!-- <div class="dashboard-hover-box">
+    <ul>
+      <li>Number of Enquiries</li>
+      <li>New Enquiries</li>
+      <li>Total Amount</li>
+      <li>Booked Rooms</li>
+      <li>Free Rooms</li>
+      <li>Cancelled Bookings</li>
+    </ul>
+  </div> -->
