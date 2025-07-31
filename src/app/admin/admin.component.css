@@ -159,7 +159,71 @@ img{
   transform: translateX(6px); 
 }
 
+/* w3ze4xrdctfvygbuhinjomkp,lwzsexdrcftvgybuhnji */
+.progress-container {
+  background: linear-gradient(135deg, #e64646, #fa0606);
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+margin: 80% 0px 0px 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgb(247, 1, 1);
+  animation: fadeIn 1.2s ease-in;
+}
 
+.progress-item {
+  margin-bottom: 20px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.progress-bar-bg {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(270deg,#5efa4a, #148d05);
+  background-size: 200% 200%;
+  width: 0%;
+  border-radius: 20px;
+  animation: animateBar 2s ease-in-out forwards, shimmer 2s infinite linear;
+}
+
+@keyframes animateBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
 

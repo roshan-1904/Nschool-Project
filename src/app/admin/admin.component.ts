@@ -13,8 +13,13 @@ export class AdminComponent implements OnInit {
   isHoveringModule: boolean = false;
   isHoveringComponent: boolean = false;
   isHovered: boolean = false;
+ progressList = [
+  { label: 'bookings Completed', value: 80 },
+  { label: 'bookings Processing', value: 55 },
+  { label: 'Other Statuses', value: 30 }
+];
 
-  constructor() {}
+ constructor() {}
 
   ngOnInit(): void {}
 

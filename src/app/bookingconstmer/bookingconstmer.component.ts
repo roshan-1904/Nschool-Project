@@ -20,6 +20,7 @@ export class BookingconstmerComponent implements OnInit {
   itemsPerPage = 10;
   currentPage = 0;
  searchTerm: string = '';
+ 
 
   constructor(private http: HttpClient) {}
 

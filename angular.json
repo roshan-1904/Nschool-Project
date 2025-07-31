@@ -71,7 +71,8 @@
               "browserTarget": "mydemo:build:production"
             },
             "development": {
-              "browserTarget": "mydemo:build:development"
+              "browserTarget": "mydemo:build:development",
+               "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -80,6 +81,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "mydemo:build"
+            
           }
         },
         "test": {

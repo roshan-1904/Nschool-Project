@@ -1,46 +1,29 @@
-
-// import { Injectable } from '@angular/core';
-// import { BehaviorSubject } from 'rxjs';
-
-// @Injectable({ providedIn: 'root' })
-// export class RoomTypeService {
-//   private enabled$ = new BehaviorSubject<boolean>(true);
-//   private selected$ = new BehaviorSubject<string>('');
-//   private acEnabled$ = new BehaviorSubject<boolean>(true); // 👈 Add this
-
-//   isEnabled$ = this.enabled$.asObservable();
-//   selectedRoomType$ = this.selected$.asObservable();
-//   isAcEnabled$ = this.acEnabled$.asObservable(); // 👈 Add this
-
-//   setEnabled(val: boolean) {
-//     this.enabled$.next(val);
-//     this.acEnabled$.next(val); 
-//   }
-
-//   setSelected(type: string) {
-//     this.selected$.next(type);
-//   }
-// }
-
-// room-type.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
+
 export class RoomTypeService {
-  private isEnabledSubject = new BehaviorSubject<boolean>(true);
-  isEnabled$ = this.isEnabledSubject.asObservable();
+  private enabled$ = new BehaviorSubject<boolean>(true);
+  isEnabled$ = this.enabled$.asObservable();
 
-  private selectedRoomTypeSubject = new BehaviorSubject<string>('');
-  selectedRoomType$ = this.selectedRoomTypeSubject.asObservable();
+  private selected$ = new BehaviorSubject<string>('');
+  selectedRoomType$ = this.selected$.asObservable();
 
-  setEnabled(enabled: boolean) {
-    this.isEnabledSubject.next(enabled);
-  }
+  private acTypeVisible$ = new BehaviorSubject<boolean>(true);
+  acTypeVisible = this.acTypeVisible$.asObservable();
 
-  setSelected(type: string) {
-    this.selectedRoomTypeSubject.next(type);
-  }
+  private roomVarietyVisible$ = new BehaviorSubject<boolean>(true);
+  roomVarietyVisible = this.roomVarietyVisible$.asObservable();
+
+  setEnabled(val: boolean)
+   { this.enabled$.next(val); }
+  setSelected(val: string)
+   { this.selected$.next(val); }
+  setAcTypeVisibility(val: boolean)
+   { this.acTypeVisible$.next(val); }
+  setRoomVarietyVisibility(val: boolean) 
+  { this.roomVarietyVisible$.next(val); }
+  
+  
 }

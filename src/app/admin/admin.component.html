@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <div class="admin">
    <div class="main-contaner">
+      
        <div class="dashbord">
            <div class="logo">
             <img height="24" width="100" src="https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/components/Header/assets/amber-logo-dark.svg" >
@@ -66,7 +67,56 @@
            <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/9155/9155961.png">
            <span class="module-title">Booking </span>
           </div>
+
+
+          <!-- <div class="progress-container">
+  <div class="progress-item">
+    <div class="label-row">
+      <span>Orders Completed</span>
+      <span>0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <div class="label-row">
+      <span>Orders Processing</span>
+      <span>0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <div class="label-row">
+      <span>Other Statuses</span>
+      <span>0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+</div> -->
+<div class="progress-container">
+  <div class="progress-item" *ngFor="let item of progressList">
+    <div class="label-row">
+      <span>{{ item.label }}</span>
+      <span>{{ item.value }}%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div
+        class="progress-bar-fill"
+        [ngStyle]="{'--progress': item.value + '%', 'width': item.value + '%'}">
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
+                
                 
    </div>
    
@@ -84,139 +134,3 @@
       <app-bookingconstmer *ngIf="selectedSubComponent === 'bookingconstmer'"></app-bookingconstmer>
       <app-categories *ngIf="selectedSubComponent === 'categories'"></app-categories>
 </div>
-
-
-
-<!-- Display Components -->
-<!-- <div   *ngIf="selectedComponent === 'dashboard'"
-class="component-container"  
-
-(mouseenter)= "isHoveringComponent = true"  
- (mouseleave)="onLeave('component')"  >
-  <app-dashboard></app-dashboard>
-</div>
-
-<div   *ngIf="selectedComponent === 'registerconstmer'" 
-class="component-container" 
- (mouseenter)="isHoveringComponent = true" 
-  (mouseleave)="onLeave('component')" >
-  <app-registerconstmer></app-registerconstmer>
-</div>
-
-         
-   <div class="content-display">
-  <app-dashboard *ngIf="!selectedSubComponent"></app-dashboard>
-  <app-manageuser *ngIf="selectedSubComponent === 'manageuser'"></app-manageuser>
-</div> -->
-     
-
-
-
-
-               <!-- <div class="modules-wrapper">
-  <button class="modules" (click)="toggleDropdown()">Modules ▼</button>
-  <div class="dropdown" *ngIf="dropdownVisible">
-    <ul>
-      <li>Dashboard</li>
-      <li>User</li>
-      <li>Rooms</li>
-      <li>Booking</li>
-      <li>Report</li>
-    </ul>
-  </div>
-</div> -->
-<!-- 
-<div class="modules-wrapper">
-  <button class="modules1" (click)="toggleDashboardDropdown()">Dashboard Module ▼</button>
-
-  <div class="dropdown" *ngIf="dashboardDropdownVisible">
-    <ul>
-      <li (click)="toggleDashboardSubDropdown()" class="has-sub">
-        Dashboard ▼
-        <ul class="sub-dropdown" *ngIf="dashboardSubDropdownVisible">
-          <li>Number of Enquiry</li>
-          <li>Number of Rooms</li>
-          <li>Booking Rooms</li>
-          <li>Free Rooms</li>
-          <li>Cancelled Booking</li>
-        </ul>
-      </li>
-
-      
-      <li (click)="toggleUserSubDropdown()" class="has-sub">
-        User Module ▼
-        <ul class="sub-dropdown" *ngIf="userSubDropdownVisible">
-          <li (click)="showCountry('registerconstmer')">Customer Register ID</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div> -->
-
-<!-- 
-  <div class="manage-user">
-      <button  class="modules2" (click)="showCountry('manageuser')">Manage User ▼</button>
-    </div> -->
-
-   <!-- <div class="modules-wrapper">
-  <button class="modules3" (click)="toggleRoomDropdown()">Room details ▼</button>
-  <div class="dropdown" *ngIf="roomdropdownVisible">
-    <ul>
-      <li>Categories</li>
-      <li>Room Details</li>
-      <li>Manage Page</li>
-    </ul>
-  </div>
-</div> -->
-
-
-<!-- <div class="manage-user">
-      <button  class="modules4" (click)="showCountry('booking-datails')"> Bookings▼</button>
-    </div> -->
-
-
-            
-       <!-- </div>
-</div>
-<app-manageuser *ngIf="selectedCountry === 'manageuser'"></app-manageuser>
-<app-registerconstmer *ngIf="selectedCountry== 'registerconstmer'"></app-registerconstmer>
-<app-booking-datails *ngIf = "selectedCountry == 'booking-datails'"></app-booking-datails> -->
-
-
-
-
-
-
-
-
-
-<!-- <li class="size"   >register from</li> usermodul
-      <li class="size">manage user</li> -->
-
-
-
-
- <!-- <div class="dashboard-hover-box" id="dropdown">
-    <ul>
-      <li class="size">Number of Enquiries</li>   dash board
-      <li class="size">New Enquiries</li>
-      <li class="size">Total Amount</li>
-      <li class="size">Booked Rooms</li>
-      <li class="size">Free Rooms</li>
-      <li class="size">Cancelled Bookings</li>
-    </ul>
-  </div> -->
-
-
-
-       <!-- <div class="modules">Dashbord -->
-                  <!-- <div class="dashboard-hover-box">
-    <ul>
-      <li>Number of Enquiries</li>
-      <li>New Enquiries</li>
-      <li>Total Amount</li>
-      <li>Booked Rooms</li>
-      <li>Free Rooms</li>
-      <li>Cancelled Bookings</li>
-    </ul>
-  </div> -->

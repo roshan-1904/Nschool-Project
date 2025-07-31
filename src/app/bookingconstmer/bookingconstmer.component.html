@@ -30,25 +30,15 @@
     </div>
 
       <div class="controls-row">
-  <!-- <div class="search-box">
-    
-    <input type="text" placeholder="Search by name, phone or location..." [(ngModel)]="searchTerm" (input)="applyFilter()"/>
-  </div> -->
     <div class="search-box">
   <div class="input-with-icon">
     <input
       type="text"
       placeholder="Search by name, phone or location..."
       [(ngModel)]="searchTerm"
-      (input)="applyFilter()"
-    />
+      (input)="applyFilter()"/>
     <img
-      src="https://cdn-icons-png.flaticon.com/512/566/566737.png"
-      width="16"
-      height="18"
-      alt="search icon"
-      class="search-icon"
-    />
+ src="https://cdn-icons-png.flaticon.com/512/566/566737.png" width="16" height="18" alt="search icon" class="search-icon"/>
   </div>
 </div>
 
@@ -98,7 +88,12 @@
             <td>{{ booking.userType }}</td>
             <td>
               <div class="action-buttons">
-                <button (click)="editBooking(booking)" class="btn-edit">Update</button>
+               
+                 <button (click)="editBooking(booking)" class="btn-edit">
+  <img src="https://cdn-icons-png.flaticon.com/512/2919/2919551.png"  width="24" height="24" alt="Edit Booking" title="Edit Booking">
+  <span class="tooltip">Edit</span>
+</button>
+
                 <button (click)="deleteBooking(booking._id)" class="btn-delete">Delete</button>
               </div>
             </td>

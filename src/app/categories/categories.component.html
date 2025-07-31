@@ -8,72 +8,24 @@
 <body>
 <div class="room-section">
   <div class="row-header">
-    <h3>AC Type</h3>
+    <h3> Room Variety</h3>
     <div class="btn-group">
-      <button class="btn" [class.active]="isEnabled" (click)="toggle(true)">Enable</button>
-      <button class="btn" [class.active]="!isEnabled" (click)="toggle(false)"> Disable</button>
-    </div>
-  </div>
-
-  <div class="row-variety">
-    <h4>Deluxe / Super Deluxe</h4>
-    <div class="btn-group">
-      <button class="btn" [class.active]="selectedRoomType === 'Deluxe'" (click)="selectRoomType('Deluxe')">Enable</button>
-      <button class="btn" [class.active]="selectedRoomType === 'Super Deluxe'"  (click)="selectRoomType('Super Deluxe')"> Disable</button>
+      <button (click)="toggleEnabled(true)" [disabled]="isEnabled">Enable All</button>
+      <button (click)="toggleEnabled(false)" [disabled]="!isEnabled">Disable All</button>
     </div>
   </div>
 </div>
 
-<tr *ngFor="let cat of categories">
-  <td>{{ cat.n }}</td>
-  <td>{{ cat.d }}</td>
-  <td>
-    <button class="btn"
-            [disabled]="!isEnabled"
-            [class.active]="isCategoryEnabled(cat.n)"
-            (click)="setCategoryStatus(cat.n, true)">
-      Enable
-    </button>
-    <button class="btn"
-            [disabled]="!isEnabled"
-            [class.active]="!isCategoryEnabled(cat.n)"
-            (click)="setCategoryStatus(cat.n, false)">
-      Disable
-    </button>
-  </td>
-</tr>
-
-<!-- 
-<table border="1" style="width: 100%; border-collapse: collapse; margin-top:20px;">
-  <thead>
-    <tr>
-      <th>Hotel Category</th>
-      <th>Description</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cat of [
-        {n:'Luxury', d:'High-end hotels with premium services.'},
-        {n:'Budget', d:'Affordable accommodation.'},
-        {n:'Business', d:'Business travel-friendly.'},
-        {n:'Resort', d:'Pools, spas, leisure.'},
-        {n:'Boutique', d:'Stylish & personalized.'},
-        {n:'Heritage', d:'Historic charm.'},
-        {n:'Airport Hotel', d:'Near airports.'},
-        {n:'Extended Stay', d:'Long-term stays.'},
-        {n:'Eco Hotel', d:'Green & sustainable.'},
-        {n:'Hostel', d:'Shared budget lodging.'}
-      ]">
-      <td>{{cat.n}}</td>
-      <td>{{cat.d}}</td>
-      <td>
-        <button class="btn" [disabled]="!isEnabled">Enable</button>
-        <button class="btn" [disabled]="!isEnabled">Disable</button>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
+<table>
+  <tr *ngFor="let cat of categories">
+    <td>{{ cat.n }}</td>
+    <td>{{ cat.d }}</td>
+    <td>
+      <button class="btn" [disabled]="!isEnabled" [class.active]="isCategoryEnabled(cat.n)" (click)="setCategoryStatus(cat.n, true)">Enable</button>
+      <button class="btn"  [disabled]="!isEnabled" [class.active]="!isCategoryEnabled(cat.n)" (click)="setCategoryStatus(cat.n, false)"> Disable</button>
+    </td>
+  </tr>
+</table>
 
 </body>
 </html>

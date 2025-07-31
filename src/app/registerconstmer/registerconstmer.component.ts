@@ -83,15 +83,6 @@ globalSearchText: string = '';
     }
   });
 
-    // this.users.push(userToAdd);
-    // this.newUser = {
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   phone: '',
-    //   state: '',
-    //   country: ''
-    // };
   }
   filteredUsers() {
   if (!this.globalSearchText.trim()) return this.users;
