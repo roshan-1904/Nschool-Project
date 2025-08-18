@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(116, 13, 13);
+    
     padding: 0px 540px;
     height: 610px;
     position: absolute;
@@ -16,22 +16,23 @@ body{
     width: 80%;
     overflow-y: auto;  
     scrollbar-width: none; 
-    -ms-overflow-style: none
+    -ms-overflow-style: none;
+     font-family: 'Poppins', sans-serif;
+     scrollbar-width: none;
 }
 
-/* General Page Styles */
+
 body {
-  font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   padding: 20px;
 }
 
-/* Section Title */
 .room-section {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .row-header {
@@ -43,6 +44,7 @@ body {
 .row-header h3 {
   margin: 0;
   font-size: 18px;
+
 }
 
 .btn-group button {
@@ -60,7 +62,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Table Style */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -69,7 +71,7 @@ table {
 }
 
 table th, table td {
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #ddd;
   text-align: left;
   font-size: 14px;
@@ -98,3 +100,28 @@ table tr:nth-child(even) {
   background-color: #ddd;
   cursor: not-allowed;
 }
+.title{
+  display: flex;
+  border-bottom: 1px solid rgb(197, 195, 195);
+ }
+.box{
+  display: flex;
+  padding: 17px 0px 0px 20px ;
+  font-size: 13px;
+}.box:hover{ color: red;}
+h2{
+  font-weight: 400;
+}
+ .pice-009{
+  display: flex;
+  gap: 10px;
+  margin: 20px 0px 0px 60%;
+  padding: 0px 0px 10px 0px;
+ }
+ .refresh{
+  border: 1px solid rgb(194, 190, 190);
+  background-color: white;
+  padding: 0px 2px 0px 2px;
+  border-radius: 5px;
+ }
+ 

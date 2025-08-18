@@ -2,13 +2,13 @@ p{
    color: black;
 }
 body{
-    
+      font-family: 'Poppins', sans-serif;
     padding: 0px 540px;
     height: 420px;
     position: absolute;
     left: 20%;
     top: 0%;
-    font-family: Arial, sans-serif;
+     scrollbar-width: none;
     padding: 40px;
     background-color: white;
     margin: 0px 0px 20% 0px;
@@ -352,3 +352,8 @@ img{margin: 5px 0px 0px 10px;}
   font-style: inherit;
 }
 .namexx1{padding: 0px 0px 0px 70px;}
+
+
+
+
+

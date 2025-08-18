@@ -5,7 +5,8 @@
 }
 body{
     padding-top: 0px;
-    
+    padding-right: 0px;
+    padding-left: 0px;
 }
 app-navbar {
   display: block;
@@ -15,16 +16,12 @@ app-navbar {
     gap: 20px;
     font-size: 15px;
     padding: 10px 0px 15px 40px;
-    
-   
     }
     .red{
-      padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
         color: red;
     } .red:hover{color: #c5002c;}
-
-
-    .img-box {
+   .img-box {
     -webkit-overflow-scrolling: touch;
      height: 600px;
     width: 60%;
@@ -39,10 +36,7 @@ app-navbar {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
 }
-
-
-
-    .enquire{
+.enquire{
         float: right;
       border: 1px solid grey;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -50,8 +44,7 @@ app-navbar {
       width: 34%;
       margin: 0px 40px 0px 0px;
       border-radius: 8px;
-      
-    }
+  }
 .tag{
     display: flex;
     padding-top: 20px;
@@ -80,9 +73,7 @@ app-navbar {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .boss{
-    display: flex;
-  }
+  .boss{ display: flex;}
 .para1{
     color: black;
     font-weight: 600;
@@ -104,13 +95,10 @@ app-navbar {
     border-radius: 20px;
     padding: 0px 10px 0px 10px;
     font-size: 13px;
-    
-}
-.box1 svg {
-  flex-shrink: 0;
-}
+  }
+.box1 svg {flex-shrink: 0;}
 .component {
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row; 
   gap: 8px;
@@ -139,9 +127,7 @@ app-navbar {
     font-size: 13px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-.box2 svg {
-  flex-shrink: 0;
-}
+.box2 svg {flex-shrink: 0;}
 .component1 {
     width: 100%;
   display: flex;
@@ -207,14 +193,11 @@ h2{
     width: -moz-fit-content;
     width: fit-content;
   }
-
 .Available{
   float: left;
   width: 80%;
   padding: 0px 0px 0px 5px;
-}.starting{
-  display: flex;
-}
+}.starting{display: flex;}
 .now1{
 color: black;
 font-size: 15px;
@@ -254,14 +237,8 @@ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
      padding: 0;
      margin: 0;
  }
- .content2{
-  font-size: 18px;
-  color: black;
-  font-weight: 600px;
- }
- .swith{
-  display: flex;padding: 0px 0px 0px 24%;
- }
+ .content2{font-size: 18px; color: black; font-weight: 600px;}
+ .swith{display: flex;padding: 0px 0px 0px 24%;}
  .week{
   color: rgb(14, 13, 13);
   font-weight: 500;
@@ -273,7 +250,7 @@ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   color: white;
   font-style: inherit;
  background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
-         background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+ background-image: linear-gradient(45deg, #ce2f57, #ff5779 50%, #e53863);
 border: none;
 } .book:hover{
    background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
@@ -281,10 +258,7 @@ border: none;
 }
 
 /* rightside */
-.house{
-  
- display: flex;
-}
+.house{display: flex;}
 .londaon{
   font-size: 18px;
   padding: 10px 0px 0px 20px;
@@ -292,10 +266,7 @@ border: none;
   font-weight: 500px;
   font-family: inherit;
 }
-.ShortListButton-module__shortlistButton{
-  padding: 5px 0px 0px 0px;
-}
-
+.ShortListButton-module__shortlistButton{ padding: 5px 0px 0px 0px;}
 .gooo{
 border: 1px solid grey;
 border-radius: 8px;
@@ -309,7 +280,7 @@ border-radius: 8px;
   border: none;
   border-radius: 10px;
   background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #f3123c));
-         background-image: linear-fgradient(45deg, #ce2f57, #ff5779 50%, #e53863);
+  background-image: linear-fgradient(45deg, #ce2f57, #ff5779 50%, #e53863);
 } .now:hover{background-color: var(--whitelabel_primary_color, var(--whitelabel_primary_color, #ad0625));
   background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);}
 
@@ -318,23 +289,17 @@ border-radius: 8px;
   font-size: 16px;
   font-weight: 550;
   margin: 20px;padding: 10px 146px;
-  
   border-radius: 10px;
   border: 2px solid #f3123c;
-
 } 
-
-  /* dropdewon */
-  .drop-down {
+.drop-down {
     margin: 30px 10px 0px 10px;
   width: 440px;
   font-family: Arial, sans-serif;
   border: 1px solid gray;
   border-radius: 8px;
   background-color: white;
-  
 }
-
 .item {
   padding: 10px;
    border-radius: 8px;
@@ -342,17 +307,11 @@ border-radius: 8px;
   position: relative;
   background-color: #f9f9f9;
 }
-
 .item:hover {
   background-color: #f1f1f1;
     border-radius: 8px;
 }
-
-.arrow {
-  /* float: right; */
-  font-size: 15px;
-}
-
+.arrow {font-size: 15px;}
 .dropdown-content {
   padding: 10px;
    border-radius: 8px;
@@ -361,38 +320,158 @@ border-radius: 8px;
 }
 .item-header {
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
 }
-
 .USPSection-module__iconWrapper {
   display: flex;
   align-items: center;
   margin-right: 10px;
 }
-
 .label {
   flex-grow: 1;
   display: flex;
   align-items: center;
   font-size: 14px;
 }
-.Instant{
-  margin-right: 55%;
-}
+.Instant{ margin-right: 55%;}
 .arrow {
   font-size: 15px;
   margin-left: 10px;
 }
-.Verified{
-  margin-right: 50.5%;
+.Verified{ margin-right: 50.5%;}
+.Lowes{margin-right: 39.5%;}
+ .Personal{ margin-right: 38%;}
+.Reviews{ margin-right: 56%;}
+.navbar-footer{padding: 0px 0px 0px 100px;}
+@media screen and (max-width:768px) {
+.container1{
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    padding: 10px 0px 15px 40px;
+    }
+    .red{ padding: 0px 0px 0px 0px;}
+   .carousel-inner{ height: 400px;}
+   .tag{
+    padding-top: 15px;
+    padding-left: 10px;
+    gap: 15px;
 }
-.Lowes{
-  margin-right: 39.5%;
+.photo{font-size: 10px; font-weight: 500;}
+ h1{
+     font-size: 15px;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+    p{
+   font-size: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+  }
+.boss{padding-left: 10px;}
+.view{padding: 10px 0px 0px 10px;}
+.Available{ width: 80%; padding: 0px 0px 0px 90px;}
+h2{ font-size: 10;}
+.RoomTypeSection-module__availabilityContainer {
+  font-size: 11px;
+  padding: 0px 0px 20px 45px;
 }
- .Personal{
-  margin-right: 38%;
+.now1{font-size: 10px;padding-left: 20px;}
+.content1{ font-size: 10px;}
+ .content2{ font-size: 12px;}
+ .session{ padding: 0px 0px 0px 10px; gap: 10px;}
+.swith{padding: 0px 0px 0px 5px;}
+.book{ padding: 5px 10px;}
+ .now01{
+  font-size: 10px;
+  margin: 10px;padding: 5px 70px;
 }
-.Reviews{
-  margin-right: 56%;
+.now{
+  font-size: 10x;
+  margin: 10px;padding: 0px 70px;
+} 
+.londaon{
+  font-size: 12px;
+  padding: 10px 0px 0px 20px;
+  margin-right: 130px;
+}
+.drop-down {
+ margin: 30px 10px 0px 10px; width: 230px;}
+  .dropdown-content { padding: 10px; font-size: 10px;}
+.Instant{ font-size: 10px;}
+.Lowes{font-size: 10px;}
+.Verified{font-size: 10px;}
+.Personal{ font-size: 10px;}
+.Reviews{ font-size: 10px;}
+.img-box { width: 55%;}
+.dog{
+  padding: 0px 0px 0px 90px;
+ width: 50%;
+ gap: 10px;
+}
+.navbar-footer{padding: 0px 0px 0px 0px;}
+}
+
+@media screen and (max-width:426px) {
+  
+.img-box { width: 100%; }
+.londaon{
+  font-size: 12px;
+  padding: 10px 0px 0px 20px;
+  margin-right: 130px;
+}
+.RoomTypeSection-module__availabilityContainer {
+  font-size: 11px;
+  padding: 0px 0px 20px 55px;
+}
+.drop-down {
+ margin: 30px 10px 0px 10px; width: 400px; }
+.dog{
+  padding: 0px 0px 0px 0px;
+ width: 90%;
+ gap: 10px;
+}
+.enquire{
+        float: left;
+      border: 1px solid grey;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      height: 520px;
+      width: 100%;
+      padding: 0px 0px 0px 0px;
+      margin: 40px 40px 0px 40px;
+      border-radius: 8px;
+  }
+  .Instant{ margin-right: 55%; font-size: 15px;}
+.arrow {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.Verified{ margin-right: 50.5%; font-size: 15px;}
+.Lowes{margin-right: 39.5%;font-size: 15px;}
+ .Personal{ margin-right: 38%; font-size: 15px;}
+.Reviews{ margin-right: 56%; font-size: 15px;}
+.navbar-footer{padding: 0px 0px 0px 0px; font-size: 15px;}
+.now{
+  font-size: 10x;
+  margin: 10px;padding: 0px 70px;
+} 
+.londaon{
+  font-size: 12px;
+  padding: 10px 0px 0px 20px;
+  margin-right: 130px;
+}
+.now{
+  font-size: 16px;
+  font-weight: 550;
+  margin: 20px;padding: 10px 146px;
+} 
+
+  .now01{
+  font-size: 16px;
+  
+  margin: 20px;padding: 10px 146px;
+ 
+  
+}
 }

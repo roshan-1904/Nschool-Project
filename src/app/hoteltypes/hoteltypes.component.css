@@ -1,0 +1,110 @@
+    body{
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 540px;
+    height: 420px;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    padding: 40px;
+    background-color: white;
+    margin: 0px 0px 20% 0px;
+    height: 0px;
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    overflow-y: auto;
+    height: 630px;
+    scrollbar-width: none;
+}
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    } 
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+}
+    .input-group {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {margin-bottom: 5px; font-weight: 600; }
+   .input-group input,
+    .input-group textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+.input-group textarea { resize: vertical;  min-height: 60px; }
+ .checkbox-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+.checkbox-group label {margin-left: 5px; font-size: 14px; }
+    button {
+      align-self: center;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+   button:hover { background-color: #0056b3; }
+ @media (max-width: 768px) {.input-group {width: 100%;}}
+    .scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}.hotel-card {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+}
+.card { height: 100%;}
+.scroll-container::-webkit-scrollbar {height: 8px;}
+.scroll-container::-webkit-scrollbar-thumb {background: #aaa;border-radius: 4px;}
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-container::-webkit-scrollbar {display: none;}
+.scroll-container { scrollbar-width: none; }
+.hotel-card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  scroll-snap-align: start;
+}
+.card-text{font-size: 10px;}
+.form-check{
+  font-size: 12px;
+}

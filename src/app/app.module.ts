@@ -49,7 +49,7 @@ import { RegisterconstmerComponent } from './registerconstmer/registerconstmer.c
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookingconstmerComponent } from './bookingconstmer/bookingconstmer.component';
 import { CategoriesComponent } from './categories/categories.component';
-
+import { HoteltypesComponent } from './hoteltypes/hoteltypes.component';
 
 
 
@@ -101,7 +101,9 @@ import { CategoriesComponent } from './categories/categories.component';
        DashboardComponent,
        BookingconstmerComponent,
        CategoriesComponent,
-  
+       HoteltypesComponent,
+
+       
     
   
    

@@ -213,12 +213,6 @@ background-color: rgb(255, 94, 0);
 
 
 
-
-/*  */
-/* .PropertyTags-module__soldOutTag{
-    padding: 10px;
-    PropertyTags-module__text
-} */
  
 element.style {
     background: linear-gradient(92deg, rgb(253, 254, 249) 17%, rgb(236, 248, 195) 78%, rgb(224, 243, 156) 100%);

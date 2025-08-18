@@ -93,7 +93,9 @@ h2{
   .money{
     font-weight: 700;
     font-size: 20px;
-  }
+    }
+    .month{padding-top: 5px;}
+    .from001{padding-top: 5px;}
   form{
     width: 70%;
     float: right;
@@ -140,7 +142,17 @@ padding: 6px 0px 0px 0px;
 .heart:hover{
 background-color: rgb(255, 94, 0);
 }
+.from{
+  display: flex;
+}
+.CompactInventoryCard-module_trustPilotBadg{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 20px;
+}
+.star{
+  margin: 5px 0px 0px 20px;
 
+}
 @media screen and (max-width: 768px){
  .card {
      min-width: 230px;

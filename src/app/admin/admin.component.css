@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+     scrollbar-width: none;
 
     margin: 0;
     font-family: var(--bs-body-font-family);
@@ -15,42 +16,27 @@ body{
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-
 }
-.admin{
-    width: 100%;
-    display: block;
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
-
- .main-contaner2{
-    
-  float: right;
-   width: 80%;
-}
+.admin{ width: 100%; display: block;}
+.main-contaner2{float: right; width: 80%;}
 .main-contaner{
-      
-      
- float: left;
+float: left;
 width: 20%;
  background-color: rgb(14, 15, 15);
 } 
 .dashbord{
     background-color: red;
     height: 630px;
-    
     font-family: 'Poppins', sans-serif;
-    
 }
-
-.logo{
-    padding: 20px 0px 10px 20px;
-}
+.logo{padding: 20px 0px 10px 20px;}
 .title{
-    
     text-align: center;
     font-size: 13px;
-     text-transform: uppercase;
-    
+    text-transform: uppercase;
     padding: 0px 80px 0px 20px;
     font-weight: 700;
     color: white;
@@ -69,33 +55,20 @@ width: 20%;
    cursor: pointer;
    color: #333;
    transition: background 0.3s;
-  
-   
-}.modules:hover{
- 
-   background-color: rgb(8, 221, 8);
+  }.modules:hover{
+  background-color: rgb(8, 221, 8);
   color: white; 
 }
 .dashboard-hover-box  {
   display: none;
-   transition: background 0.2s;
-   padding: 0px 0px 0px 35px;
+    transition: background 0.2s;
+    padding: 0px 0px 0px 35px;
    margin:0px 0px 0px 0px ;
   
 }
-.dashboard-module:hover .dashboard-hover-box {
-  display: block;
-  font-size: 10;
-}
-.modules:hover  .page-content {
-  display: none;
-}
-
-.size{
-  font-size: 10;
-}
-
-
+.dashboard-module:hover .dashboard-hover-box { display: block; font-size: 10;}
+.modules:hover  .page-content { display: none;}
+.size{ font-size: 10;}
 @keyframes fadeDown {
   0% {
     opacity: 0;
@@ -106,17 +79,8 @@ width: 20%;
     transform: translateY(0);
   }
 }
-
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-
 .modules {
-    background: transparent;
+  background: transparent;
   color: white;
   padding: 5px 50px;
   align-items: center;
@@ -127,34 +91,20 @@ width: 20%;
   border-radius: 5px;
   text-align: left;
   font-family: 'Poppins', sans-serif;
-  
 }
-
-
 .active-module {
   background-color: rgb(8, 221, 8);
   color: white !important;
 }
-.component-container {
-  animation: pop 0.5s ease-out forwards;
-}
-
-
-
+.component-container { animation: pop 0.5s ease-out forwards;}
 .modules,
-.active-module {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-img{
-  padding: 0px 0px 5px 0px;
-}
-
+.active-module {transition: background-color 0.3s ease, color 0.3s ease;}
+img{padding: 0px 0px 5px 0px;}
 .module-title {
   display: inline-block;
   transition: transform 0.3s ease;
   padding: 0px 0px 0px 10px;
 }
-
 .modules.dashboard-module:hover .module-title {
   transform: translateX(6px); 
 }
@@ -167,16 +117,12 @@ img{
   border-radius: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
-margin: 80% 0px 0px 10px;
+  margin: 80% 0px 0px 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border: 2px solid rgb(247, 1, 1);
   animation: fadeIn 1.2s ease-in;
 }
-
-.progress-item {
-  margin-bottom: 20px;
-}
-
+.progress-item { margin-bottom: 20px;}
 .label-row {
   display: flex;
   justify-content: space-between;
@@ -184,7 +130,6 @@ margin: 80% 0px 0px 10px;
   margin-bottom: 6px;
   font-weight: 500;
 }
-
 .progress-bar-bg {
   background-color: rgba(255, 255, 255, 0.3);
   height: 10px;
@@ -192,7 +137,6 @@ margin: 80% 0px 0px 10px;
   overflow: hidden;
   position: relative;
 }
-
 .progress-bar-fill {
   height: 100%;
   background: linear-gradient(270deg,#5efa4a, #148d05);
@@ -201,23 +145,13 @@ margin: 80% 0px 0px 10px;
   border-radius: 20px;
   animation: animateBar 2s ease-in-out forwards, shimmer 2s infinite linear;
 }
-
 @keyframes animateBar {
-  from {
-    width: 0%;
-  }
-  to {
-    width: var(--progress);
-  }
+  from { width: 0%;}
+  to {width: var(--progress);}
 }
-
 @keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  0% { background-position: 0% 50%;}
+  100% { background-position: 200% 50%;}
 }
 
 @keyframes fadeIn {
@@ -225,10 +159,9 @@ margin: 80% 0px 0px 10px;
   to { opacity: 1; transform: translateY(0); }
 }
 
+@media screen and (max-width: 768px) {
 
-
-
-
+}
 
 
 

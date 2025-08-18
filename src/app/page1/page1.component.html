@@ -49,32 +49,118 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      
 
       <div class="card-body">
         <h5 class="card-title">{{ hotel.hotelName }}</h5>
         <p class="card-text">{{ hotel.location }}</p>
+        <!-- <p>
+            Available:
+            <span *ngIf="hotel.bhk2">2 BHK</span>
+            <span *ngIf="hotel.bhk3">3 BHK</span>
+          </p> -->
+          <p>
+  Available:
+  <ng-container *ngIf="hotel.bhk2 || hotel.bhk3; else noBhk">
+    <span *ngIf="hotel.bhk2">2 BHK </span>
+    <span *ngIf="hotel.bhk3">3 BHK</span>
+  </ng-container>
+  <ng-template #noBhk>
+    <span>None</span>
+  </ng-template>
+</p>
+
         <div class="from">
-          from
+          <!-- from -->
+           <span class="from001">from</span>
           <span class="money">{{ hotel.currency }}{{ hotel.amount }}/</span>
           <span class="month">month</span>
-          <div
+          
+           
+          <div class="star">
+          <div 
             data-testid="property-page-gallery-trustpilot-badge"
             class="CompactInventoryCard-module_trustPilotBadge TrustPilotBadge-module_TrustpilotContainer"
             role="none"
           >
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3307_589)">
+              <path d="M8.29958 0.963135C8.15293 0.661011 7.84303 0.46875 7.5027 0.46875C7.16237 0.46875 6.85524 0.661011 6.70583 0.963135L4.92669 4.59686L0.953385 5.17914C0.621354 5.22858 0.344661 5.45929 0.242284 5.77515C0.139908 6.091 0.222916 6.43982 0.460872 6.67328L3.34401 9.505L2.66335 13.5068C2.60801 13.8364 2.74635 14.1714 3.02028 14.3665C3.2942 14.5615 3.65667 14.5862 3.9555 14.4296L7.50547 12.5482L11.0554 14.4296C11.3543 14.5862 11.7167 14.5642 11.9907 14.3665C12.2646 14.1687 12.4029 13.8364 12.3476 13.5068L11.6642 9.505L14.5473 6.67328C14.7853 6.43982 14.871 6.091 14.7659 5.77515C14.6607 5.45929 14.3868 5.22858 14.0548 5.17914L10.0787 4.59686L8.29958 0.963135Z" fill="#0E9F6E">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_3307_589">
+                <rect width="15.9375" height="14.0625" fill="white" transform="translate(-0.46875 0.46875)">
+                </rect>
+              </clipPath>
+            </defs>
+          </svg>
             <span data-testid="property-rating" class="TrustPilotBadge-module__ratingSpan">
               {{ hotel.rating }}
               <span data-testid="property-page-trustpilot-property-review-count" class="TrustPilotBadge-module__ratingInnerSpan">
                 ({{ hotel.reviewCount }})
+                
               </span>
+              
             </span>
           </div>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+
+
+<!-- <div class="container mt-4">
+  <h2>Available Hotel Types</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let hotel of hotels; let i = index">
+      <div class="card">
+        <div id="carousel{{i}}" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              *ngFor="let img of hotel.imageUrls; let j = index"
+              type="button"
+              [attr.data-bs-target]="'#carousel' + i"
+              [attr.data-bs-slide-to]="j"
+              [class.active]="j === 0"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div *ngFor="let img of hotel.imageUrls; let j = index"
+                 class="carousel-item"
+                 [class.active]="j === 0">
+              <img [src]="img" class="d-block w-100" style="height: 200px; object-fit: cover" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button"
+                  [attr.data-bs-target]="'#carousel'+i" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button"
+                  [attr.data-bs-target]="'#carousel'+i" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ hotel.hotelName }}</h5>
+          <p class="card-text">{{ hotel.location }}</p>
+          <p>Price: {{ hotel.currency }}{{ hotel.amount }}</p>
+          <p>Rating: {{ hotel.rating }} ({{ hotel.reviewCount }})</p>
+          <p>{{ hotel.roomDescription }}</p>
+          <p>
+            Available:
+            <span *ngIf="hotel.bhk2">2 BHK</span>
+            <span *ngIf="hotel.bhk3">3 BHK</span>
+          </p>
+          <small class="text-muted">Added: {{ hotel.createdAt | date:'mediumDate' }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 </body>
 </html>
