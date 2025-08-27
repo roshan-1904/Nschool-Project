@@ -4,43 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <div class="booking-container">
-
-   <div class="title">
-            <h2> Booking-Customers</h2>
-            <div class="box">
-            <p class="home">Home ></p>
-            <p class="Dashboard">Customers</p>
-            </div>
-        </div>
-
-  <div class="content-wrapper">
-    
-    <div class="table-wrapper">
-
-      <div class="Customer-list">
-       <div class="img">
-        <img src="   https://cdn-icons-png.flaticon.com/512/151/151917.png " width="16" height="19"  a class="img-small ms-3">
-        <p class="list">Customer List</p>
+<div class="title">
+    <p class="intel">Booking</p>
+       <div class="box" >
+          <p class="home">Home ></p>
+          <p class="Dashboard">Booking</p>
        </div>
+           <div class="tooltip-container fov-00">
+                <button class="icon-button" (click)="deleteSelectedUsers()" [disabled]="selectedUsers.length === 0">
+                <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="24" height="24" alt="Delete"/>
+              </button>
+                <div class="tooltip-box006">Delete</div>
+           </div>
+  <div class="formet">
+    <div class="excel-sheet">
+      <div class="tooltip-container">
+         <button (click)="exportToExcel()">
+            <img src="https://cdn-icons-png.flaticon.com/128/732/732220.png" width="24" height="24" alt="Excel" class="img-small">
+          </button>
+      <div class="tooltip-box">Download Excel</div>
     </div>
 
-      <div class="controls-row">
-    <div class="search-box">
-  <div class="input-with-icon">
-    <input
-      type="text"
-      placeholder="Search by name, phone or location..."
-      [(ngModel)]="searchTerm"
-      (input)="applyFilter()"/>
-    <img
- src="https://cdn-icons-png.flaticon.com/512/566/566737.png" width="16" height="18" alt="search icon" class="search-icon"/>
+        <div class="tooltip-container">
+           <button (click)="exportToPDF()">
+             <img src="https://cdn-icons-png.flaticon.com/512/4726/4726010.png" width="24" height="24" alt="PDF" class="img-small">
+            </button>
+               <div class="tooltip-box">Download PDF</div>
+         </div>
+
+               <div class="tooltip-container">
+                 <button (click)="exportToCSV()">
+                   <img src="https://cdn-icons-png.flaticon.com/512/9159/9159105.png" width="24" height="24" alt="CSV" class="img-small">
+                 </button>
+                  <div class="tooltip-box">Download CSV</div>
+               </div>
+
+
+           <div class="tooltip-container">
+              <div class="add-box" (click)="showCountry('addnewbooking')">
+                 <img src="https://cdn-icons-png.flaticon.com/512/11461/11461127.png" width="24" height="24" alt="Add New" class="img-small" />
+              </div>
+                  <div class="tooltip-box">Add New</div>
+</div>
   </div>
 </div>
+           
+
+  </div>
+<app-addnewbooking *ngIf="showFormOnly" [formData]="form" (onAddUser)="handleUserForm($event)" (onCancel)="showFormOnly = false"></app-addnewbooking>
+
+  <div class="content-wrapper" *ngIf="!showFormOnly">
+      <div class="table-wrapper" >
+         <div class="Customer-list">
+           <div class="img">
+             <img src="   https://cdn-icons-png.flaticon.com/512/151/151917.png " width="16" height="19"  a class="img-small ms-3">
+             <p class="list">Customer List</p>
+           </div>
+        </div>
+<div class="controls-row">
+  <div class="search-box">
+    <div class="input-with-icon">
+        <input type="text" placeholder="Search by name, phone or location..." [(ngModel)]="searchTerm" (input)="applyFilter()" />
+        <img src="https://cdn-icons-png.flaticon.com/512/566/566737.png" width="16" height="18"  alt="search icon" class="search-icon" />
+   </div>
+  </div>
 
   <div class="pagination-dropdown">
     <label for="itemsPerPage">Show:</label>
@@ -51,12 +82,12 @@
     </select>
   </div>
 </div>
-
-
-      <table class="booking-table">
+  <table class="booking-table">
      <thead>
           <tr>
-            <th>S.No</th>
+             <th>
+               <input type="checkbox" [checked]="areAllVisibleSelected()" (change)="toggleSelectAllVisible(getCheckedValue($event))"/>
+             </th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -70,11 +101,12 @@
             <th>User</th>
             <th>Actions</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let booking of filteredBookings; let i = index">
-
-            <td>{{ i + 1 }}</td>
+    </thead>
+      <tbody>
+         <tr *ngFor="let booking of paginatedBookings">
+            <td>
+                <input type="checkbox" [checked]="isSelected(booking._id)" (change)="toggleUserSelection(booking._id, getCheckedValue($event))"/>
+            </td>
             <td>{{ booking.name }}</td>
             <td>{{ booking.email }}</td>
             <td>{{ booking.phone }}</td>
@@ -87,91 +119,24 @@
             <td>{{ booking.packageType }}</td>
             <td>{{ booking.userType }}</td>
             <td>
-              <div class="action-buttons">
-               
-                 <button (click)="editBooking(booking)" class="btn-edit">
-  <img src="https://cdn-icons-png.flaticon.com/512/2919/2919551.png"  width="24" height="24" alt="Edit Booking" title="Edit Booking">
-  <span class="tooltip">Edit</span>
-</button>
-
-                <button (click)="deleteBooking(booking._id)" class="btn-delete">Delete</button>
+             <div class="action-buttons">
+                <button (click)="editBooking(booking)" class="btn-edit">
+                  <img src="https://cdn-icons-png.flaticon.com/512/2919/2919551.png"  width="24" height="24" alt="Edit Booking" title="Edit Booking">
+                  <span class="tooltip">Edit</span>
+                </button>
+                   <button (click)="deleteBooking(booking._id)" class="btn-delete">Delete</button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-
-     
-    <form (ngSubmit)="onSubmit()" #formRef="ngForm" class="booking-form" novalidate>
-      <div class="booking-form-grid">
-
-        <div class="Customer-list">
-       <div class="img">
-        <img src="https://cdn-icons-png.flaticon.com/512/747/747968.png" width="20" height="19"  a class="img-small ms-3">
-        <p class="list">Add New Room</p>
-       </div>
-    </div>
-        <input type="text" [(ngModel)]="form.name" name="name" required placeholder="Name" />
-        <input type="email" [(ngModel)]="form.email" name="email" required placeholder="Email" />
-        <input
-          type="tel"
-          [(ngModel)]="form.phone"
-          name="phone"
-          pattern="^[0-9]{10}$"
-          required
-          placeholder="Phone"
-        />
-        <input type="text" [(ngModel)]="form.location" name="location" required placeholder="Location" />
-        <select [(ngModel)]="form.acType" name="acType" required>
-          <option value="" disabled selected>AC Type</option>
-          <option value="AC">AC</option>
-          <option value="Non-AC">Non-AC</option>
-        </select>
-        <select [(ngModel)]="form.bedType" name="bedType" required>
-          <option value="" disabled selected>Bed Type</option>
-          <option value="Single">Single</option>
-          <option value="Double">Double</option>
-        </select>
-        <input type="date" [(ngModel)]="form.bookingDate" name="bookingDate" required />
-        <select [(ngModel)]="form.accommodation" name="accommodation" required>
-          <option value="" disabled selected>Accommodation</option>
-          <option value="PG">PG</option>
-          <option value="Hostel">Hostel</option>
-          <option value="Private Room">Private Room</option>
-        </select>
-        <select [(ngModel)]="form.paymentMode" name="paymentMode" required>
-          <option value="" disabled selected>Payment Mode</option>
-          <option value="Net Banking">Net Banking</option>
-          <option value="Cash">Cash</option>
-        </select>
-        <select [(ngModel)]="form.packageType" name="packageType" required>
-          <option value="" disabled selected>Package</option>
-          <option value="Silver">Silver</option>
-          <option value="Gold">Gold</option>
-          <option value="Platinum">Platinum</option>
-        </select>
-        <select [(ngModel)]="form.userType" name="userType" required>
-          <option value="" disabled selected>User Type</option>
-          <option value="Student">Student</option>
-          <option value="Non-Student">Non-Student</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-submit">{{ form._id ? 'Update' : 'Create' }} Booking</button>
-    </form>
-  </div>
-
-  <button (click)="nextPage()" class="btn-next" [disabled]="(currentPage + 1) * itemsPerPage >= bookings.length">
-    Next Page
-  </button>
-
-  <div class="download-excel">
-    <button (click)="exportToExcel()" class="btn-excel">Download Excel</button>
-  </div>
-</div>
-
-</body>
+ </div>
+           <div class="pagination-controls">
+             <button (click)="previousPage()" [disabled]="currentPage === 0"> Previous </button>
+               <span> Page {{ currentPage + 1 }} of {{ totalPages }} </span>
+             <button (click)="nextPage()" [disabled]="(currentPage + 1) * itemsPerPage >= filteredBookings.length"> Next </button>
+           </div>
+        </div>
+     </div>
+   </body>
 </html>
-
-

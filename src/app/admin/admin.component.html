@@ -1,106 +1,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <div class="admin">
     <div class="main-contaner">
-        
         <div class="dashbord">
             <div class="logo">
-              <img height="24" width="100" src="https://static-assets.amberstudent.com/amber-user-website/static/amberstudent/assets/images/components/Header/assets/amber-logo-dark.svg" >
-              
-            </div>
-  
-    <div  class="modules dashboard-module" 
+              <img height="30" width="110" src="https://prod-static-assets.amberstudent.com/images/logo/amber-logo-light.svg" >
+        </div>
+  <div  class="modules dashboard-module" 
     [ngClass]="{'active-module': selectedComponent === 'dashboard'}"
     (mouseenter)="onComponentHover('dashboard', true)" 
       (mouseleave)="onLeave('dashboard')">
       <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=16" srcset="https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=16 1x, https://cdn.iconscout.com/icon/free/png-256/free-dashboard-icon-download-in-svg-png-gif-file-formats--measure-progress-report-key-performance-font-awesome-pack-user-interface-icons-44631.png?f=webp&amp;w=12 3x">
 
-    <span class="module-title">Dashboard </span>
+    <span class="module-title"> Dashboard </span>
     </div>
  <div  class="modules dashboard-module" 
     [ngClass]="{'active-module': selectedComponent === 'registerconstmer'}"
         (mouseenter)="onComponentHover('registerconstmer', true)" 
       (mouseleave)="onLeave('registerconstmer')">
       <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/16170/16170021.png">
-      <span class="module-title">user modules </span>
+      <span class="module-title">coustomer modules
+         <img src="   https://cdn-icons-png.flaticon.com/512/19024/19024490.png " width="16" height="16" alt="" title="" class="img-small"></span>
       <div class="dashboard-hover-box" id="dropdown">
       </div>
     </div>
 
         <div class="modules dashboard-module" onclick="toggleDropdown()">
               <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/4635/4635381.png ">
-                  <span class="module-title"> Room Details </span>
-                            <div class="dashboard-hover-box" id="dropdown" >
-      <ul>
-          <li class="size module-title"
+                  <span class="module-title"> Room Details 
+  <img alt="Room Details Icon"   src="	https://cdn-icons-png.flaticon.com/512/19024/19024490.png "width="16" height="16"width="16" class="img-small004" >
+</span>
+
+    <div class="dashboard-hover-box" id="dropdown" >
+        <div class="Manage-Page ">
+          <li class="size module-title right dashboard-module"
       (mouseenter)="onSubComponentHover('categories', true)"
       (mouseleave)="onLeave('component')">
-      <img alt="Free Dashboard Icon" class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/17456/17456673.png">
-      Categories
+      <img alt="Free Dashboard Icon" class="icon" width="16" src="	https://cdn-icons-png.flaticon.com/512/2722/2722998.png"> 
+      <span class="module-title"> <p> Categories </p> </span>
   </li>
+</div>
 
-
-          
-        <li class="size module-title"
+        <div class="Manage-Page">
+        <li class="size module-title right dashboard-module"
           (mouseenter)="onSubComponentHover('hoteltypes', true)"
       (mouseleave)="onLeave('component')">
-          <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/489/489870.png">
-          Room details</li>
 
-          
-        <li class="size module-title"
+        <img alt="Free Dashboard  Icon"  class="icon" width="16" src="	https://cdn-icons-png.flaticon.com/512/2722/2722998.png">
+          <span class="module-title">Room details</span>
+        </li>
+      </div>
+          <div class="Manage-Page">
+        <li class="size module-title admin-colour right dashboard-module"
         (mouseenter)="onSubComponentHover('manageuser', true)"
           (mouseleave)="onLeave('component')" >
-                <img class="icon" width="16"
-                    src="https://cdn-icons-png.flaticon.com/512/17335/17335867.png">
-                Manage Page
+                <img class="icon" width="16" src="	https://cdn-icons-png.flaticon.com/512/2722/2722998.png">
+               <span class="module-title">Manage Page </span>
               </li>
-
-      </ul>
-    </div>
-                  </div>
-
-
-
-          <div class="modules dashboard-module "
+          </div>
+      </div>
+ </div>
+      <div class="modules dashboard-module "
+        [ngClass]="{'active-module': selectedComponent === 'bookingconstmer'}"
           (mouseenter)="onSubComponentHover('bookingconstmer', true)"
             (mouseleave)="onLeave('component')">
             <img alt="Free Dashboard  Icon"  class="icon" width="16" src="https://cdn-icons-png.flaticon.com/512/9155/9155961.png">
-            <span class="module-title">Booking </span>
+            <span class="module-title">Booking 
+               <img alt="Room Details Icon"  class="icon toggle-icon howe howe2" src="	https://cdn-icons-png.flaticon.com/512/19024/19024490.png "width="26" height="10" width="16">
+            </span>
             </div>
-
-
-  <div class="progress-container">
-    <div class="progress-item" *ngFor="let item of progressList">
-      <div class="label-row">
-        <span>{{ item.label }}</span>
-        <span>{{ item.value }}%</span>
-      </div>
-      <div class="progress-bar-bg">
-        <div
-          class="progress-bar-fill"
-          [ngStyle]="{'--progress': item.value + '%', 'width': item.value + '%'}">
-        </div>
-      </div>
-    </div>
-  </div>
-
-                  </div>
-                  
-                  
-    </div>
-    
-    </div>
+          </div>
+       </div>
+   </div>
 
   <div class="component-container"
       (mouseenter)="isHoveringComponent = true"
       (mouseleave)="onLeave('component')">
-
     <app-dashboard *ngIf="!selectedSubComponent && selectedComponent === 'dashboard'"></app-dashboard>
     <app-registerconstmer *ngIf="!selectedSubComponent && selectedComponent === 'registerconstmer'"></app-registerconstmer>
-
-        
-        <app-manageuser *ngIf="selectedSubComponent === 'manageuser'"></app-manageuser>
-        <app-bookingconstmer *ngIf="selectedSubComponent === 'bookingconstmer'"></app-bookingconstmer>
-        <app-categories *ngIf="selectedSubComponent === 'categories'"></app-categories>
-        <app-hoteltypes *ngIf ="selectedSubComponent === 'hoteltypes'"></app-hoteltypes>
+    <app-manageuser *ngIf="selectedSubComponent === 'manageuser'"></app-manageuser>
+    <app-bookingconstmer *ngIf="selectedSubComponent === 'bookingconstmer'"></app-bookingconstmer>
+    <app-categories *ngIf="selectedSubComponent === 'categories'"></app-categories>
+    <app-hoteltypes *ngIf ="selectedSubComponent === 'hoteltypes'"></app-hoteltypes>
   </div>

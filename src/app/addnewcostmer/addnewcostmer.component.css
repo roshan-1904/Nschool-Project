@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: transparent ;
+}
+
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-submit {
+  margin-top: 16px;
+  text-align: right;
+}
+
+
+ .form-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-grid input {
+    margin: 0px 0px 0px 0px;
+  padding: 10px 10px 10px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-grid input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: var(--whitelabel_primary_color, #f3123c);
+  background-image: linear-gradient(45deg, #ce2f57, #e93a5d 50%, #990c2f);
+  color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--whitelabel_primary_color, #ad0625);
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+}
+
+.Customer-list{ padding-bottom: 20px;}
+
+.img{
+  display: flex;
+  background-color: rgb(187, 183, 183);
+  padding: 10px 0px;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.3);
+}
+
+input::placeholder {
+text-align: left;
+}
+ 

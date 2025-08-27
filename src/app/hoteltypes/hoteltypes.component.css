@@ -17,94 +17,118 @@
     height: 630px;
     scrollbar-width: none;
 }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    h3 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    } 
-    .form-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+
+.intel{
+  font-weight: 100;
+  font-size: 35px;
+  color: rgb(114, 108, 108);
+  padding: 20px 0px 0px 0px;
 }
-    .input-group {
-      width: 45%;
-      display: flex;
-      flex-direction: column;
-    }
-    .input-group label {margin-bottom: 5px; font-weight: 600; }
-   .input-group input,
-    .input-group textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-.input-group textarea { resize: vertical;  min-height: 60px; }
- .checkbox-group {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-.checkbox-group label {margin-left: 5px; font-size: 14px; }
-    button {
-      align-self: center;
-      padding: 12px 30px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      background-color: #007BFF;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-   button:hover { background-color: #0056b3; }
- @media (max-width: 768px) {.input-group {width: 100%;}}
-    .scroll-container {
+
+
+table img {
+  border-radius: 5px;
+}
+
+thead {
+  background-color: #f1f1f1;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.title{
   display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}.hotel-card {
-  flex: 0 0 auto;
-  width: 300px;
-  scroll-snap-align: start;
+   border-bottom: 1px solid rgb(206, 199, 199);}
+.cutoff{ 
+  display: flex; 
+   padding: 45px 0px 0px 30px;
+  }
+    .pix-009{
+    display: flex;
+    gap: 10px;
+    padding: 40px 0px 0px 55%;
+   }
+
+   .img{
+    display: flex;
+     background-color: rgb(187, 183, 183);
+     padding: 10px 0px 0px 0px;
+     margin: 0px 0px 0px 0px;
+     gap: 10px;
+   }
+
+
+.table-responsive{
+   border: 1px solid gray;
+   margin: 0px 10px ;
+   margin-bottom: 10px;
 }
-.card { height: 100%;}
-.scroll-container::-webkit-scrollbar {height: 8px;}
-.scroll-container::-webkit-scrollbar-thumb {background: #aaa;border-radius: 4px;}
-.scroll-container {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+
+.container{
+  padding: 0px 0px;
+   border: 1px solid gray;
+   margin-top: 20px;
+}
+
+.controls-row {
   display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  -webkit-overflow-scrolling: touch;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.scroll-container::-webkit-scrollbar {display: none;}
-.scroll-container { scrollbar-width: none; }
-.hotel-card {
-  flex: 0 0 auto;
-  width: 300px;
-  height: auto;
-  scroll-snap-align: start;
+
+.input-with-icon {
+  position: relative;
 }
-.card-text{font-size: 10px;}
-.form-check{
-  font-size: 12px;
+
+.input-with-icon input {
+  padding-left: 30px;
+  height: 30px;
+}
+
+.input-with-icon .search-icon {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+.redhills{
+  display: flex;
+}
+.delete-button{
+background-image: linear-gradient(45deg, #ce2f57, #e93a5d 50%, #990c2f);
+border: none;
+cursor: pointer;
+transition: 0.3s;
+border-radius: 5px;
+padding: 5px 5px;
+color: white;
+} .delete-button:hover{background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);}
+
+.edit-button{
+  background-color: rgb(58, 58, 209);
+  color: white;
+  border: none;
+cursor: pointer;
+transition: 0.3s;
+border-radius: 5px;
+padding: 5px 5px;
+color: white;
+}.edit-button:hover{
+  background-color: rgb(7, 7, 117);
 }

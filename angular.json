@@ -73,6 +73,10 @@
             "production": {
               "browserTarget": "mydemo:build:production"
             },
+            "options": {
+             "proxyConfig": "proxy.conf.json"
+             },
+
             "development": {
               "browserTarget": "mydemo:build:development",
                "proxyConfig": "proxy.conf.json"
@@ -85,7 +89,7 @@
           "options": {
             "browserTarget": "mydemo:build"
             
-          }
+            }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -102,6 +106,7 @@
               "src/styles.css"
             ],
             "scripts": []
+            
           }
         }
       }

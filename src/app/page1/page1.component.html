@@ -54,16 +54,14 @@
       <div class="card-body">
         <h5 class="card-title">{{ hotel.hotelName }}</h5>
         <p class="card-text">{{ hotel.location }}</p>
-        <!-- <p>
-            Available:
-            <span *ngIf="hotel.bhk2">2 BHK</span>
-            <span *ngIf="hotel.bhk3">3 BHK</span>
-          </p> -->
+      
           <p>
   Available:
   <ng-container *ngIf="hotel.bhk2 || hotel.bhk3; else noBhk">
     <span *ngIf="hotel.bhk2">2 BHK </span>
     <span *ngIf="hotel.bhk3">3 BHK</span>
+    <span *ngIf="hotel.ac">AC</span>
+    <span *ngIf="hotel.nonAc">NOn-AC</span>
   </ng-container>
   <ng-template #noBhk>
     <span>None</span>
@@ -113,54 +111,6 @@
 
 
 
-<!-- <div class="container mt-4">
-  <h2>Available Hotel Types</h2>
-  <div class="row">
-    <div class="col-md-6 mb-4" *ngFor="let hotel of hotels; let i = index">
-      <div class="card">
-        <div id="carousel{{i}}" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button
-              *ngFor="let img of hotel.imageUrls; let j = index"
-              type="button"
-              [attr.data-bs-target]="'#carousel' + i"
-              [attr.data-bs-slide-to]="j"
-              [class.active]="j === 0"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div *ngFor="let img of hotel.imageUrls; let j = index"
-                 class="carousel-item"
-                 [class.active]="j === 0">
-              <img [src]="img" class="d-block w-100" style="height: 200px; object-fit: cover" />
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button"
-                  [attr.data-bs-target]="'#carousel'+i" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button"
-                  [attr.data-bs-target]="'#carousel'+i" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ hotel.hotelName }}</h5>
-          <p class="card-text">{{ hotel.location }}</p>
-          <p>Price: {{ hotel.currency }}{{ hotel.amount }}</p>
-          <p>Rating: {{ hotel.rating }} ({{ hotel.reviewCount }})</p>
-          <p>{{ hotel.roomDescription }}</p>
-          <p>
-            Available:
-            <span *ngIf="hotel.bhk2">2 BHK</span>
-            <span *ngIf="hotel.bhk3">3 BHK</span>
-          </p>
-          <small class="text-muted">Added: {{ hotel.createdAt | date:'mediumDate' }}</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 </body>
 </html>

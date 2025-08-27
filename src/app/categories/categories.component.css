@@ -106,7 +106,7 @@ table tr:nth-child(even) {
  }
 .box{
   display: flex;
-  padding: 17px 0px 0px 20px ;
+  padding: 45px 0px 0px 20px ;
   font-size: 13px;
 }.box:hover{ color: red;}
 h2{
@@ -125,3 +125,9 @@ h2{
   border-radius: 5px;
  }
  
+ .intel{
+  font-weight: 100;
+  font-size: 35px;
+  color: rgb(114, 108, 108);
+  padding: 20px 0px 0px 0px;
+}

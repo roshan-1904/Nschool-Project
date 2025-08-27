@@ -1,108 +1,126 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
-  <h3>Add Hotel Type</h3>
-  <form (submit)="onSubmit(); $event.preventDefault()">
+  <div class="title">
+            <p class="intel"> hotel type</p>
+            <div class="cutoff">
+            <p class="home">Home >  </p>
+            <p class="Dashboard"> hotel type</p>
+            </div>
+            <div class="pix-009">
+                          <img src="https://cdn-icons-png.flaticon.com/512/11461/11461127.png" width="26" height="26" alt="Add Hotel"  title="Add Hotel" class="img-small" (click)="toggleAddHotelForm()" />
 
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group"  style="width: 45%;">
-        <label>Hotel Name</label>
-        <input class="form-control" [(ngModel)]="hotelName" name="hotelName" required />
-      </div>
-      <div class="form-group"  style="width: 45%;">
-        <label>Location</label>
-        <input class="form-control" [(ngModel)]="location" name="location" />
-      </div>
+                        <!-- <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="24" height="24" alt="Delete"/> -->
+                         <img  src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png"  width="24" height="24"  alt="Delete Selected"  title="Delete Selected Hotels" style="cursor: pointer;"  (click)="deleteSelectedHotels()" />
+
+            </div>
+        </div>
+
+
+        <app-addnewroomdetails
+         *ngIf="showAddHotelForm" 
+         [hotel]="selectedHotel" 
+         (hotelAdded)="onHotelAdded($event)" 
+         (hotelUpdated)="onHotelUpdated($event)"
+        (cancelForm)="toggleAddHotelForm()"
+        ></app-addnewroomdetails>
+
+
+<div class="container" *ngIf="!showAddHotelForm">
+  <div class="Customer-list">
+           <div class="img">
+             <img src="   https://cdn-icons-png.flaticon.com/512/151/151917.png " width="16" height="19"  a class="img-small ms-3">
+             <p class="list">Customer List</p>
+           </div>
+        </div>
+
+<div class="controls-row">
+  <div class="search-box">
+    <div class="input-with-icon">
+      <input  type="text"  placeholder="Search by name or location..."  [(ngModel)]="searchTerm" (input)="applyFilter()"/>
+      <img src="https://cdn-icons-png.flaticon.com/512/566/566737.png" width="16" height="18"  alt="search icon" class="search-icon"/>
     </div>
-
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Price</label>
-        <input type="number" class="form-control" [(ngModel)]="amount" name="amount" required />
-      </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Currency</label>
-        <input class="form-control" [(ngModel)]="currency" name="currency" />
-      </div>
-    </div>
-
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Rating</label>
-        <input type="number" step="0.1" class="form-control" [(ngModel)]="rating" name="rating" />
-      </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Review Count</label>
-        <input type="number" class="form-control" [(ngModel)]="reviewCount" name="reviewCount" />
-      </div>
-    </div>
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Image URLs (comma-separated)</label>
-        <input class="form-control" [(ngModel)]="imageInput" name="imageInput" />
-      </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Room Description</label>
-        <textarea class="form-control" [(ngModel)]="roomDescription" name="roomDescription"></textarea>
-      </div>
-    </div>
-
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="bhk2" [(ngModel)]="bhk2" name="bhk2" />
-        <label for="bhk2" class="form-check-label">2 BHK Available</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="bhk3" [(ngModel)]="bhk3" name="bhk3" />
-        <label for="bhk3" class="form-check-label">3 BHK Available</label>
-      </div>
-      
-    </div>
-
-    <button class="btn btn-primary mt-3" type="submit">Add Hotel Type</button>
-  </form>
-</div>
-
-  <div class="scroll-container" *ngIf="hotels.length > 0">
-  <div class="hotel-card" *ngFor="let hotel of hotels">
-    <div class="card h-100">
-      <img *ngIf="hotel.imageUrls?.[0]" [src]="hotel.imageUrls[0]" class="card-img-top"
-        alt="Hotel Image" style="height: 200px; object-fit: cover;">
-
-      <div class="card-body">
-        <h5 class="card-title">{{ hotel.hotelName }}</h5>
-        <p class="card-text">
-          <strong>Location:</strong> {{ hotel.location }}<br>
-          <strong>Price:</strong> {{ hotel.amount }} {{ hotel.currency }}<br>
-          <strong>Rating:</strong> {{ hotel.rating }} ({{ hotel.reviewCount }} reviews)<br>
-          <strong>Room:</strong> {{ hotel.roomDescription }}<br>
-          
-          <div class="form-row" style="display: flex; gap: 1rem;">
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="bhk2" [(ngModel)]="bhk2" name="bhk2" />
-    <label for="bhk2" class="form-check-label">2 BHK Available</label>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="bhk3" [(ngModel)]="bhk3" name="bhk3" />
-    <label for="bhk3" class="form-check-label">3 BHK Available</label>
-  </div>
-  
-</div>
- 
 
-      </div>
-    </div>
+  <div class="pagination-dropdown">
+    <label for="itemsPerPage">Show:</label>
+    <select [(ngModel)]="itemsPerPage" (change)="applyFilter()">
+      <option [value]="10">10 per page</option>
+      <option [value]="15">15 per page</option>
+      <option [value]="20">20 per page</option>
+    </select>
   </div>
 </div>
 
+
+        
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>
+        <input type="checkbox" [checked]="areAllSelected()" (change)="toggleAllSelection($event)" />
+      </th>
+          <th>Image</th>
+          <th>Hotel Name</th>
+          <th>Location</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Room</th>
+          <th>BHK</th>
+          <th>AC</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hotel of  paginatedHotels; let i = index">
+          <ng-container *ngIf="editIndex !== i">
+             <td>
+          <input type="checkbox" [checked]="isSelected(hotel._id!)" (change)="toggleSelection(hotel._id!)" />
+        </td>
+            <td>
+              <img *ngIf="hotel.imageUrls?.[0]" [src]="hotel.imageUrls[0]" width="60" height="60" style="object-fit: cover;" />
+            </td>
+            <td>{{ hotel.hotelName }}</td>
+            <td>{{ hotel.location }}</td>
+            <td>{{ hotel.amount }} {{ hotel.currency }}</td>
+            <td>{{ hotel.rating }} ({{ hotel.reviewCount }} reviews)</td>
+            <td>{{ hotel.roomDescription }}</td>
+            <td>
+              <span *ngIf="hotel.bhk2">2BHK </span>
+              <span *ngIf="hotel.bhk3">3BHK</span>
+            </td>
+            <td>
+              <span *ngIf="hotel.ac">AC</span>
+              <span *ngIf="!hotel.ac && hotel.nonAc">Non-AC</span>
+              <span *ngIf="!hotel.ac && !hotel.nonAc">N/A</span>
+            </td>
+            <td>
+                <div class="redhills"></div>
+                 <button class="edit-button" (click)="toggleAddHotelForm(hotel)">Edit</button>
+            <button class="delete-button " (click)="deleteHotel(hotel._id!, i)">Delete</button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+      <div class="pagination-controls" *ngIf="filteredHotels.length > itemsPerPage">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+</div>
+  </div>
+
+
+
+</div>
 </body>
-</html> 
+</html>
 
 
 

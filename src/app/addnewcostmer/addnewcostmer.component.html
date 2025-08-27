@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<div class="form-section ">
+  <div class="form-container ">
+    <div class="Customer-list">
+      <div class="img">
+        <img src="	https://cdn-icons-png.flaticon.com/512/359/359858.png" width="26" height="26" class="img-small ms-3"/>
+        <p class="list">Add New Customer</p>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <input [(ngModel)]="newUser.firstName" placeholder="First Name" />
+        <p class="error" *ngIf="showErrors && !newUser.firstName.trim()">First name is required</p>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="newUser.lastName" placeholder="Last Name" />
+        <p class="error" *ngIf="showErrors && !newUser.lastName.trim()">Last name is required</p>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="newUser.email" placeholder="Email" />
+        <p class="error" *ngIf="showErrors && !validateEmail(newUser.email)">Valid email is required</p>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="newUser.phone" placeholder="Phone" />
+        <p class="error" *ngIf="showErrors && !validatePhone(newUser.phone)">Enter a valid phone number (10–15 digits)</p>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="newUser.state" placeholder="State" />
+        <p class="error" *ngIf="showErrors && !newUser.state.trim()">State is required</p>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="newUser.country" placeholder="Country" />
+        <p class="error" *ngIf="showErrors && !newUser.country.trim()">Country is required</p>
+      </div>
+    </div>
+
+    <div class="form-submit">
+      <button class="submit-btn" (click)="submitUser()">Submit</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

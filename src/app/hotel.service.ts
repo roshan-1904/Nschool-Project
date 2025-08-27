@@ -47,6 +47,8 @@ export class HotelService {
     this.hotels.push(hotel);
     return of(hotel);
   }
+
+  
 }
 
 

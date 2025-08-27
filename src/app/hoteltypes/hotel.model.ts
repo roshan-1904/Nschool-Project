@@ -1,5 +1,5 @@
 export interface Hotel {
-  id?: number; 
+  _id?: number; 
   hotelName: string;
   location: string;
   amount: number;
@@ -10,4 +10,7 @@ export interface Hotel {
   roomDescription: string;
   bhk2: boolean;
   bhk3: boolean;
+   ac?: boolean;     
+  nonAc?: boolean;   
+ 
 }

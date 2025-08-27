@@ -50,6 +50,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookingconstmerComponent } from './bookingconstmer/bookingconstmer.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HoteltypesComponent } from './hoteltypes/hoteltypes.component';
+import { AddnewcostmerComponent } from './addnewcostmer/addnewcostmer.component';
+import { AddnewbookingComponent } from './addnewbooking/addnewbooking.component';
+import { AddnewroomdetailsComponent } from './addnewroomdetails/addnewroomdetails.component';
 
 
 
@@ -102,6 +105,9 @@ import { HoteltypesComponent } from './hoteltypes/hoteltypes.component';
        BookingconstmerComponent,
        CategoriesComponent,
        HoteltypesComponent,
+       AddnewcostmerComponent,
+       AddnewbookingComponent,
+       AddnewroomdetailsComponent,
 
        
     

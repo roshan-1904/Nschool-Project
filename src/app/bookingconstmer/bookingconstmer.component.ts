@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-bookingconstmer',
@@ -10,7 +11,9 @@ import { saveAs } from 'file-saver';
   styleUrls: ['./bookingconstmer.component.css']
 })
 export class BookingconstmerComponent implements OnInit {
-
+selectedUsers: string[] = [];
+showFormOnly = false;
+selectedCountry: string = '';
   bookings: any[] = [];
   filteredBookings: any[] = [];
   paginatedBookings: any[] = [];
@@ -33,6 +36,7 @@ export class BookingconstmerComponent implements OnInit {
       next: data => {
         this.bookings = data;
         this.filteredBookings = [...this.bookings];
+         this.paginate();
         this.loading = false;
       },
       error: err => {
@@ -49,6 +53,8 @@ export class BookingconstmerComponent implements OnInit {
       booking.phone?.toLowerCase().includes(term) ||
       booking.location?.toLowerCase().includes(term)
     );
+      this.currentPage = 0; 
+  this.paginate();
   }
 
   onSubmit() {
@@ -69,11 +75,25 @@ export class BookingconstmerComponent implements OnInit {
     });
   }
 
+  addUser(newUser: any) {
+  this.http.post('http://localhost:3000/api/roombookings', newUser).subscribe({
+    next: () => {
+      this.showFormOnly = false; 
+      this.loadBookings();       
+    },
+    error: () => {
+      alert('Failed to add booking.');
+    }
+  });
+}
+
+
   editBooking(booking: any) {
     this.form = { ...booking }; 
       if (booking.bookingDate) {
       this.form.bookingDate = new Date(booking.bookingDate).toISOString().split('T')[0];
     }
+      this.showFormOnly = true; 
   }
 
   deleteBooking(id: string) {
@@ -87,19 +107,123 @@ export class BookingconstmerComponent implements OnInit {
   paginate() {
     const start = this.currentPage * this.itemsPerPage;
     const end = start + this.itemsPerPage;
-    this.paginatedBookings = this.bookings.slice(start, end);
+    this.paginatedBookings = this.filteredBookings.slice(start, end);
+  }
+    get totalPages(): number {
+    return Math.ceil(this.filteredBookings.length / this.itemsPerPage);
   }
 
   nextPage() {
-    if ((this.currentPage + 1) * this.itemsPerPage < this.bookings.length) {
+    if ((this.currentPage + 1) * this.itemsPerPage < this.filteredBookings.length) {
       this.currentPage++;
       this.paginate();
     }
   }
 
-  exportToExcel(): void {
-  const dataToExport = this.bookings.map((booking, index) => ({
-    'S. No': index + 1,
+    previousPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.paginate();
+    }
+  }
+
+
+  showCountry(component: string): void {
+  if (component === 'addnewbooking') {
+    this.showFormOnly = true;
+  }
+}
+
+
+
+exportToCSV(): void {
+  const csvRows = [
+    [
+      'S.No',
+      'Name',
+      'Email',
+      'Phone',
+      'Location',
+      'AC Type',
+      'Bed Type',
+      'Booking Date',
+      'Accommodation',
+      'Payment Mode',
+      'Package Type',
+      'User Type'
+    ]
+  ];
+
+ this.getSelectedOrPaginatedBookings().forEach(booking => {
+    csvRows.push([
+      booking.name,
+      booking.email,
+      booking.phone,
+      booking.location,
+      booking.acType,
+      booking.bedType,
+      new Date(booking.bookingDate).toLocaleDateString(),
+      booking.accommodation,
+      booking.paymentMode,
+      booking.packageType,
+      booking.userType
+    ]);
+  });
+
+  const csvContent = csvRows.map(row => row.join(',')).join('\n');
+  const blob = new Blob([csvContent], { type: 'text/csv' });
+  saveAs(blob, `bookings_${new Date().getTime()}.csv`);
+}
+
+// ✅ PDF Export
+exportToPDF(): void {
+  const doc = new jsPDF();
+  doc.setFontSize(14);
+  doc.text('Customer Booking List', 14, 15);
+
+  const headers = [
+    [
+      'S.No',
+      'Name',
+      'Email',
+      'Phone',
+      'Location',
+      'AC Type',
+      'Bed Type',
+      'Booking Date',
+      'Accommodation',
+      'Payment Mode',
+      'Package Type',
+      'User Type'
+    ]
+  ];
+
+  const data = this.getSelectedOrPaginatedBookings().map(booking => [
+    booking.name,
+    booking.email,
+    booking.phone,
+    booking.location,
+    booking.acType,
+    booking.bedType,
+    new Date(booking.bookingDate).toLocaleDateString(),
+    booking.accommodation,
+    booking.paymentMode,
+    booking.packageType,
+    booking.userType
+  ]);
+
+  autoTable(doc, {
+    head: headers,
+    body: data,
+    startY: 20,
+    styles: { fontSize: 8 }
+  });
+
+  doc.save(`bookings_${new Date().getTime()}.pdf`);
+}
+
+exportToExcel(): void {
+  const dataToExport = this.getSelectedOrPaginatedBookings().map((booking, index) => ({
     'Name': booking.name,
     'Email': booking.email,
     'Phone': booking.phone,
@@ -113,10 +237,7 @@ export class BookingconstmerComponent implements OnInit {
     'User Type': booking.userType,
   }));
 
-
   const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(dataToExport);
-
-  
   const workbook: XLSX.WorkBook = {
     Sheets: { 'Bookings': worksheet },
     SheetNames: ['Bookings']
@@ -131,5 +252,93 @@ private saveAsExcelFile(buffer: any, fileName: string): void {
   saveAs(data, `${fileName}_${new Date().getTime()}.xlsx`);
 }
 
-  
+toggleUserSelection(userId: string, checked: boolean): void {
+  if (checked) {
+    if (!this.selectedUsers.includes(userId)) {
+      this.selectedUsers.push(userId);
+    }
+  } else {
+    this.selectedUsers = this.selectedUsers.filter(id => id !== userId);
+  }
 }
+
+isSelected(userId: string): boolean {
+  return this.selectedUsers.includes(userId);
+}
+
+toggleSelectAllVisible(checked: boolean): void {
+  const idsOnPage = this.paginatedBookings.map(b => b._id);
+  if (checked) {
+    idsOnPage.forEach(id => {
+      if (!this.selectedUsers.includes(id)) {
+        this.selectedUsers.push(id);
+      }
+    });
+  } else {
+    this.selectedUsers = this.selectedUsers.filter(id => !idsOnPage.includes(id));
+  }
+}
+
+areAllVisibleSelected(): boolean {
+  return this.paginatedBookings.every(b => this.selectedUsers.includes(b._id));
+}
+
+private getSelectedOrPaginatedBookings(): any[] {
+  if (this.selectedUsers.length > 0) {
+    return this.paginatedBookings.filter(b => this.selectedUsers.includes(b._id));
+  }
+  return this.paginatedBookings;
+}
+
+clearSelectedUsers(): void {
+  this.selectedUsers = [];
+}
+getCheckedValue(event: Event): boolean {
+  const input = event.target as HTMLInputElement;
+  return input?.checked ?? false;
+}
+
+
+
+deleteSelectedUsers(): void {
+  if (this.selectedUsers.length === 0) return;
+
+  const confirmed = confirm(`Are you sure you want to delete ${this.selectedUsers.length} selected booking(s)?`);
+  if (!confirmed) return;
+
+  const deleteRequests = this.selectedUsers.map(id =>
+    this.http.delete(`http://localhost:3000/api/roombookings/${id}`)
+  );
+
+  Promise.all(deleteRequests.map(req => req.toPromise()))
+    .then(() => {
+      this.clearSelectedUsers();
+      this.loadBookings();
+    })
+    .catch(() => alert('Failed to delete selected bookings'));
+}
+
+handleUserForm(userData: any) {
+  if (userData._id) {
+    console.log('Updating booking with ID:', userData._id);
+    this.http.put(`http://localhost:3000/api/roombookings/${userData._id}`, userData).subscribe({
+      next: () => {
+        this.showFormOnly = false;
+        this.loadBookings();
+      },
+      error: () => alert('Failed to update booking.')
+    });
+  } else {
+    console.log('Adding new booking:', userData);
+    this.http.post('http://localhost:3000/api/roombookings', userData).subscribe({
+      next: () => {
+        this.showFormOnly = false;
+        this.loadBookings();
+      },
+      error: () => alert('Failed to add booking.')
+    });
+  }
+}
+
+}
+

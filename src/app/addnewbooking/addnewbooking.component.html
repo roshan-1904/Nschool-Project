@@ -1,0 +1,111 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+    <div class="Customer-list">
+          <div class="img">
+              <img src="	https://cdn-icons-png.flaticon.com/512/359/359858.png" width="26" height="26" class="img-small ms-3"/>
+              <p class="list">Add New Customer</p>
+          </div>
+      </div>
+    <form (ngSubmit)="submitForm()" #formRef="ngForm" class="booking-form" novalidate>
+    <div class="booking-form-grid">
+
+    
+    
+      <div class="form-group">
+        <input type="text" [(ngModel)]="form.name" name="name" required placeholder="Name" #name="ngModel" />
+        <div *ngIf="name.invalid && name.touched" class="error">Name is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input type="email" [(ngModel)]="form.email" name="email" required placeholder="Email" #email="ngModel" />
+        <div *ngIf="email.invalid && email.touched" class="error">Valid email is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" [(ngModel)]="form.phone" name="phone" required pattern="^[0-9]{10}$" placeholder="Phone" #phone="ngModel" />
+        <div *ngIf="phone.invalid && phone.touched" class="error">Phone must be 10 digits.</div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="form.location" name="location" required placeholder="Location" #location="ngModel" />
+        <div *ngIf="location.invalid && location.touched" class="error">Location is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.acType" name="acType" required #acType="ngModel">
+          <option value="" disabled selected>AC Type</option>
+          <option value="AC">AC</option>
+          <option value="Non-AC">Non-AC</option>
+        </select>
+        <div *ngIf="acType.invalid && acType.touched" class="error">AC type is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.bedType" name="bedType" required #bedType="ngModel">
+          <option value="" disabled selected>Bed Type</option>
+          <option value="Single">Single</option>
+          <option value="Double">Double</option>
+        </select>
+        <div *ngIf="bedType.invalid && bedType.touched" class="error">Bed type is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input type="date" [(ngModel)]="form.bookingDate" name="bookingDate" required #bookingDate="ngModel" />
+        <div *ngIf="bookingDate.invalid && bookingDate.touched" class="error">Booking date is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.accommodation" name="accommodation" required #accommodation="ngModel">
+          <option value="" disabled selected>Accommodation</option>
+          <option value="PG">PG</option>
+          <option value="Hostel">Hostel</option>
+          <option value="Private Room">Private Room</option>
+        </select>
+        <div *ngIf="accommodation.invalid && accommodation.touched" class="error">Accommodation is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.paymentMode" name="paymentMode" required #paymentMode="ngModel">
+          <option value="" disabled selected>Payment Mode</option>
+          <option value="Net Banking">Net Banking</option>
+          <option value="Cash">Cash</option>
+        </select>
+        <div *ngIf="paymentMode.invalid && paymentMode.touched" class="error">Payment mode is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.packageType" name="packageType" required #packageType="ngModel">
+          <option value="" disabled selected>Package</option>
+          <option value="Silver">Silver</option>
+          <option value="Gold">Gold</option>
+          <option value="Platinum">Platinum</option>
+        </select>
+        <div *ngIf="packageType.invalid && packageType.touched" class="error">Package type is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="form.userType" name="userType" required #userType="ngModel">
+          <option value="" disabled selected>User Type</option>
+          <option value="Student">Student</option>
+          <option value="Non-Student">Non-Student</option>
+        </select>
+        <div *ngIf="userType.invalid && userType.touched" class="error">User type is required.</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-submit" [disabled]="formRef.invalid">
+        {{ form._id ? 'Update' : 'Create' }} Booking
+      </button>
+      <button type="button" (click)="cancel()" class="btn-cancel">Cancel</button>
+    </div>
+  </form>
+
+  </body>
+  </html>

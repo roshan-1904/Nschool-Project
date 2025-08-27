@@ -353,7 +353,10 @@ img{margin: 5px 0px 0px 10px;}
 }
 .namexx1{padding: 0px 0px 0px 70px;}
 
-
-
-
+.intel{
+  font-weight: 100;
+  font-size: 35px;
+  color: rgb(114, 108, 108);
+  padding: 20px 0px 0px 0px;
+}
 

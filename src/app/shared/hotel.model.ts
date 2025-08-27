@@ -1,6 +1,6 @@
 
 export interface Hotel {
-  id?: string;
+  _id?: string;
   hotelName: string;
   location: string;
   amount: number;
@@ -12,5 +12,7 @@ export interface Hotel {
   bhk2: boolean;
   bhk3: boolean;
   createdAt?: Date;
+  ac: boolean;
+  nonAc: boolean;
 }
 
