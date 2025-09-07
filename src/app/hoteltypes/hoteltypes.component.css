@@ -27,7 +27,7 @@
 
 
 table img {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 thead {
@@ -36,7 +36,8 @@ thead {
 
 .table td, .table th {
   vertical-align: middle;
-  font-size: 13px;
+  font-size: 11px;
+    scrollbar-width: none;
 }
 
 .title{
@@ -49,7 +50,7 @@ thead {
     .pix-009{
     display: flex;
     gap: 10px;
-    padding: 40px 0px 0px 55%;
+    padding: 40px 0px 0px 43%;
    }
 
    .img{
@@ -105,11 +106,11 @@ thead {
   gap: 10px;
   margin-top: 10px;
 }
-
-
 .redhills{
-  display: flex;
-}
+  /* display: flex; */
+   justify-content: center;
+  align-items: center;
+
 .delete-button{
 background-image: linear-gradient(45deg, #ce2f57, #e93a5d 50%, #990c2f);
 border: none;
@@ -118,7 +119,14 @@ transition: 0.3s;
 border-radius: 5px;
 padding: 5px 5px;
 color: white;
-} .delete-button:hover{background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);}
+ font-weight: 500;
+ transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+} .delete-button:hover{
+  background-image: linear-gradient(45deg, #eb2556, #f31541 30%, #da1143);
+   transform: scale(1.05);
+  }
 
 .edit-button{
   background-color: rgb(58, 58, 209);
@@ -131,4 +139,143 @@ padding: 5px 5px;
 color: white;
 }.edit-button:hover{
   background-color: rgb(7, 7, 117);
+  transform: scale(1.05);
 }
+
+ .tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+
+  .tooltip-wrapper .tooltip-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip-wrapper .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+
+  .tooltip-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  
+  .edit-button,
+  .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .delete-button {
+    position: relative;
+  }
+
+  .delete-button-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .delete-button-wrapper .tooltip-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .delete-button-wrapper .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+
+  .delete-button-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.tooltip-box {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%; /* Above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  font-size: 12px;
+}
+
+.tooltip-box::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Triangle pointing down */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+ 

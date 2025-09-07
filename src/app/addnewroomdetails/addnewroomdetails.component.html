@@ -1,72 +1,126 @@
- <div class="container">
-  <h3>Add Hotel Type</h3>
-  <form (submit)="onSubmit(); $event.preventDefault()">
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Hotel Name</label>
-        <input class="form-control" [(ngModel)]="hotelName" name="hotelName" required />
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ </head>
+ <body>
+
+<div class="container">
+  <h3>{{ hotel?._id ? 'Update Hotel Type' : 'Add Hotel Type' }}</h3>
+
+  <form #hotelForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Hotel Name </label>
+        <input  class="form-control"  name="hotelName"  [(ngModel)]="hotelName"  required  #hotelNameRef="ngModel"  [class.invalid]="hotelNameRef.invalid && hotelNameRef.touched" />
+        <div *ngIf="hotelNameRef.invalid && hotelNameRef.touched" class="text-danger small">
+          *Hotel name is required*
+        </div>
       </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Location</label>
-        <input class="form-control" [(ngModel)]="location" name="location" />
-      </div>
-    </div>
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Price</label>
-        <input type="number" class="form-control" [(ngModel)]="amount" name="amount" required />
-      </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Currency</label>
-        <input class="form-control" [(ngModel)]="currency" name="currency" />
-      </div>
-    </div>
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Rating</label>
-        <input type="number" step="0.1" class="form-control" [(ngModel)]="rating" name="rating" />
-      </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Review Count</label>
-        <input type="number" class="form-control" [(ngModel)]="reviewCount" name="reviewCount" />
+      <div class="form-group">
+        <label>Location </label>
+        <input class="form-control" name="location"  [(ngModel)]="location"  required  #locationRef="ngModel"  [class.invalid]="locationRef.invalid && locationRef.touched" />
+        <div *ngIf="locationRef.invalid && locationRef.touched" class="text-danger small">
+          *Location is required*
+        </div>
       </div>
     </div>
-    <div class="form-row" style="display: flex; gap: 1rem;">
-      <div class="form-group" style="width: 45%;">
-        <label>Image URLs (comma-separated)</label>
-        <input class="form-control" [(ngModel)]="imageInput" name="imageInput" />
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Price </label>
+        <input type="number" class="form-control" name="amount" [(ngModel)]="amount" required min="1"  #amountRef="ngModel" [class.invalid]="amountRef.invalid && amountRef.touched" />
+        <div *ngIf="amountRef.invalid && amountRef.touched" class="text-danger small">
+          *Enter a valid price*
+        </div>
       </div>
-      <div class="form-group" style="width: 45%;">
-        <label>Room Description</label>
-        <textarea class="form-control" [(ngModel)]="roomDescription" name="roomDescription"></textarea>
-      </div>
-    </div>
-    <div class="form-row" style="display: flex; gap: 1rem; margin-top: 1rem;">
-      <div class="form-check">
-        <input type="checkbox" [(ngModel)]="bhk2" name="bhk2" class="form-check-input" id="bhk2" />
-        <label class="form-check-label" for="bhk2">2 BHK Available</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" [(ngModel)]="bhk3" name="bhk3" class="form-check-input" id="bhk3" />
-        <label class="form-check-label" for="bhk3">3 BHK Available</label>
+      <div class="form-group">
+        <label>Currency </label>
+        <input  class="form-control" name="currency"  [(ngModel)]="currency"  required #currencyRef="ngModel" [class.invalid]="currencyRef.invalid && currencyRef.touched"/>
+        <div *ngIf="currencyRef.invalid && currencyRef.touched" class="text-danger small">
+          *Currency is required*
+        </div>
       </div>
     </div>
-    <div class="form-row" style="display: flex; gap: 1rem; margin-top: 1rem;">
-      <div class="form-check">
-        <input type="checkbox" [(ngModel)]="ac" name="ac" class="form-check-input" id="ac" />
-        <label class="form-check-label" for="ac">AC Available</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" [(ngModel)]="nonAc" name="nonAc" class="form-check-input" id="nonAc" />
-        <label class="form-check-label" for="nonAc">Non-AC Available</label>
+
+     <div class="form-row">
+    <div class="form-group">
+      <label>Rating </label>
+      <input type="number" step="0.1" min="0" max="5"  class="form-control"  name="rating"  required [(ngModel)]="rating"  #ratingRef="ngModel" [class.invalid]="ratingRef.invalid && ratingRef.touched" />
+      <div *ngIf="ratingRef.invalid && ratingRef.touched" class="text-danger small">
+        *Rating must be between 0 and 5*
       </div>
     </div>
-    <!-- <button class="btn btn-primary mt-3" type="submit">Add Hotel Type</button>
-    <button class="btn btn-secondary mt-3 ml-2" type="button" (click)="cancel()">Cancel</button> -->
- <button type="submit" class="btn btn-primary">
-    {{ hotel?._id ? 'Update' : 'Add' }}
-  </button>
-  <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+
+   
+    <div class="form-group">
+      <label>Review Count </label>
+      <input type="number"  class="form-control"  name="reviewCount"  [(ngModel)]="reviewCount" required min="0" #reviewCountRef="ngModel" [class.invalid]="reviewCountRef.invalid && reviewCountRef.touched" />
+      <div *ngIf="reviewCountRef.invalid && reviewCountRef.touched" class="text-danger small">
+        *Review count must be 0 or more*
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Image URLs (comma-separated) </label>
+      <input class="form-control"  [(ngModel)]="imageInput"  required  name="imageInput"  #imageInputRef="ngModel" [class.invalid]="imageInputRef.invalid && imageInputRef.touched" />
+      <div *ngIf="imageInputRef.invalid && imageInputRef.touched" class="text-danger small">
+        *At least one image URL is required*
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Room Description </label>
+      <textarea class="form-control" [(ngModel)]="roomDescription" required  name="roomDescription" #roomDescRef="ngModel" [class.invalid]="roomDescRef.invalid && roomDescRef.touched"></textarea>
+      <div *ngIf="roomDescRef.invalid && roomDescRef.touched" class="text-danger small">
+        *Description is required*
+      </div>
+    </div>
+  </div>
+
+  <div class="gow-00">
+  <div class="form-row checkbox-row">
+    <div class="form-check">
+      <input type="checkbox" [(ngModel)]="bhk2" name="bhk2" class="form-check-input" id="bhk2" />
+      <label class="form-check-label" for="bhk2">2 BHK</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" [(ngModel)]="bhk3" name="bhk3" class="form-check-input" id="bhk3" />
+      <label class="form-check-label" for="bhk3">3 BHK</label>
+    </div>
+  </div>
+  <div *ngIf="showBhkError" class="text-danger small mb-2">
+    *Please select at least one BHK option (2 BHK or 3 BHK)*
+  </div>
+
+  <div class="form-row checkbox-row">
+    <div class="form-check">
+      <input type="checkbox" [(ngModel)]="ac" name="ac" class="form-check-input" id="ac" />
+      <label class="form-check-label" for="ac">AC Available</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" [(ngModel)]="nonAc" name="nonAc" class="form-check-input" id="nonAc" />
+      <label class="form-check-label" for="nonAc">Non-AC Available</label>
+    </div>
+  </div>
+  <div *ngIf="showAcError" class="text-danger small mb-2">
+    *Please select at least one AC option (AC or Non-AC)*
+  </div>
+
+  </div>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">
+      {{ hotel?._id ? 'Update' : 'Add' }}
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+  </div>
   </form>
 </div>
 
+ </body>
+ </html>

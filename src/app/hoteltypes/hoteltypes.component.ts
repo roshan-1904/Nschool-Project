@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../shared/hotel.service';
 import { Hotel } from '../shared/hotel.model';
+import * as XLSX from 'xlsx';
+import * as FileSaver from 'file-saver';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
+
 
 @Component({
   selector: 'app-hoteltypes',
@@ -247,6 +252,67 @@ deleteSelectedHotels() {
       });
     }
   });
+}
+
+
+// Export to Excel
+exportToExcel() {
+  const exportData = this.filteredHotels.map(hotel => ({
+    'Hotel Name': hotel.hotelName,
+    'Location': hotel.location,
+    'Price': `${hotel.amount} ${hotel.currency}`,
+    'Rating': `${hotel.rating} (${hotel.reviewCount} reviews)`,
+    'Room': hotel.roomDescription,
+    'BHK': `${hotel.bhk2 ? '2BHK ' : ''}${hotel.bhk3 ? '3BHK' : ''}`,
+    'AC': hotel.ac ? 'AC' : hotel.nonAc ? 'Non-AC' : 'N/A'
+  }));
+
+  const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(exportData);
+  const workbook: XLSX.WorkBook = { Sheets: { 'Hotels': worksheet }, SheetNames: ['Hotels'] };
+  const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+
+  const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+  FileSaver.saveAs(blob, 'hotels.xlsx');
+}
+
+// Export to CSV
+exportToCSV() {
+  const exportData = this.filteredHotels.map(hotel => ({
+    'Hotel Name': hotel.hotelName,
+    'Location': hotel.location,
+    'Price': `${hotel.amount} ${hotel.currency}`,
+    'Rating': `${hotel.rating} (${hotel.reviewCount} reviews)`,
+    'Room': hotel.roomDescription,
+    'BHK': `${hotel.bhk2 ? '2BHK ' : ''}${hotel.bhk3 ? '3BHK' : ''}`,
+    'AC': hotel.ac ? 'AC' : hotel.nonAc ? 'Non-AC' : 'N/A'
+  }));
+
+  const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(exportData);
+  const csvOutput = XLSX.utils.sheet_to_csv(worksheet);
+  const blob = new Blob([csvOutput], { type: 'text/csv;charset=utf-8;' });
+  FileSaver.saveAs(blob, 'hotels.csv');
+}
+
+// Export to PDF
+exportToPDF() {
+  const doc = new jsPDF();
+
+  const exportData = this.filteredHotels.map(hotel => [
+    hotel.hotelName,
+    hotel.location,
+    `${hotel.amount} ${hotel.currency}`,
+    `${hotel.rating} (${hotel.reviewCount} reviews)`,
+    hotel.roomDescription,
+    `${hotel.bhk2 ? '2BHK ' : ''}${hotel.bhk3 ? '3BHK' : ''}`,
+    hotel.ac ? 'AC' : hotel.nonAc ? 'Non-AC' : 'N/A'
+  ]);
+
+  autoTable(doc, {
+    head: [['Hotel Name', 'Location', 'Price', 'Rating', 'Room', 'BHK', 'AC']],
+    body: exportData
+  });
+
+  doc.save('hotels.pdf');
 }
 
 }

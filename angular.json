@@ -14,7 +14,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-        "file-saver"
+        "file-saver",
+        "raf",
+        "rgbcolor"
       ],
             "outputPath": "dist/mydemo",
             "index": "src/index.html",

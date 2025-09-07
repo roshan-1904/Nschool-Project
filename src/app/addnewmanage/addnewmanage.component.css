@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Form Container */
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+}
+
+/* Make textarea span full width */
+textarea {
+  grid-column: span 2;
+}
+
+/* Full-width for buttons */
+button[type="submit"],
+button[type="button"] {
+  width: 100%;
+}
+
+/* Group buttons together in one row */
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Input Styling */
+input, textarea {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Error Message */
+.error {
+  grid-column: span 2;
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: -15px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #2ecc71;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+button[type="button"] {
+  background-color: #bdc3c7;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #95a5a6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}

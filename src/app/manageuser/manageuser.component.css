@@ -1,197 +1,255 @@
 body{
-    background-color: rgb(116, 13, 13);
-    padding: 0px 540px;
-    height: 610px;
-    position: absolute;
-    left: 20%;
-    top: 0%;
-     padding: 0px 540px;
-     left: 20%;
-    top: 0%;
-font-family: Arial, sans-serif;
+     
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(116, 13, 13);
+  padding: 0px 540px;
+  height: 610px;
+  position: absolute;
+  left: 20%;
+  top: 0%;
+  padding: 0px 540px;
+  left: 20%;
+  top: 0%;
   padding: 40px;
- background-color: white;
-   margin: 0px 0px 20% 0px;
-    height: 100vh;
-    width: 80%;
-    overflow-y: auto;  
-     scrollbar-width: none; 
+  background-color: white;
+  margin: 0px 0px 20% 0px;
+  height: 100vh;
+  width: 80%;
+  overflow-y: auto;  
+  scrollbar-width: none; 
   -ms-overflow-style: none;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  height: 610px;          
-  overflow-y: auto; 
+.hotel-table-container {
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
 }
 
-
-h2, h3 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 24px;
-}
-
-
-.form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px 20px;
-}
-
-
-.form textarea {
-  grid-column: span 2;
-  min-height: 100px;
-  resize: vertical;
-}
-
-
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 15px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  outline: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-.form input:focus,
-.form textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0,123,255,0.3);
-}
-
-
-.form button[type="submit"] {
-  grid-column: 1 / 2;
-  padding: 12px 20px;
-  background: linear-gradient(45deg, #007bff, #0056b3);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
-  transition: background 0.4s ease;
-}
-
-.form button[type="submit"]:hover {
-  background: linear-gradient(45deg, #0056b3, #003d80);
-}
-
-.form button[type="button"] {
-  grid-column: 2 / 3;
-  padding: 12px 20px;
-  background: #6c757d;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 6px 12px rgba(108, 117, 125, 0.4);
-  transition: background 0.4s ease;
-}
-
-.form button[type="button"]:hover {
-  background: #565e64;
-}
-
-
-.cards-container {
+.table-actions {
   display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
-  padding: 20px 0;
-  scroll-snap-type: x mandatory;
-}
-.card-container::-webkit-scrollbar {
-  display: none; 
+  justify-content: space-between;
+  margin-bottom: 12px;
+  align-items: center;
 }
 
-
-.card {
-  min-width: 320px;
-  flex: 0 0 auto;
-  background: linear-gradient(135deg, #6b8ce3, #88b0f7);
-  border-radius: 16px;
-  padding: 24px;
-  color: white;
-  box-shadow: 0 6px 15px rgba(107, 140, 227, 0.3);
-  scroll-snap-align: start;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.table-actions input[type="text"] {
+  width: 250px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(107, 140, 227, 0.5);
+.table-actions select {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-.card h4 {
-  margin-top: 0;
-  font-weight: 700;
-  font-size: 1.4rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+.hotel-table {
+  width: 98%;
+  margin: 10px;
+  border-collapse: collapse;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
 }
 
-.card p {
-  font-size: 1rem;
-  line-height: 1.4;
-  margin: 8px 0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+.hotel-table th,
+.hotel-table td {
+  border: 1px solid #ddd;
+  padding: 5px 5px;
+  text-align: left;
+  vertical-align: middle;
 }
 
-/* Buttons inside card */
-.card button {
-  margin-right: 10px;
-  padding: 8px 18px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
-  color: white;
+.hotel-table th {
+  background-color: #d3d3d3;
+  font-weight: bold;
+}
+
+.hotel-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+}
+
+.btn {
+  border: none;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-right: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.card button:hover {
-  background-color: rgba(255, 255, 255, 0.45);
-  border-color: white;
+.btn-edit {
+  background-color: transparent;
+  color: white;
 }
 
-.card button:last-child {
-  background: rgba(255, 69, 58, 0.8);
-  border-color: rgba(255, 69, 58, 1);
+.btn-edit:hover {
+  background-color: #291bf1;
 }
 
-.card button:last-child:hover {
-  background: rgba(255, 69, 58, 1);
-  border-color: white;
+.btn-delete {
+  background-image: linear-gradient(45deg, #ce2f57, #e93a5d 50%, #990c2f);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-image: linear-gradient(45deg, #c91e48, #f31541 30%, #da1143);
+}
+
+  .img{
+    display: flex;
+     background-color: rgb(187, 183, 183);
+     padding: 10px 0px 0px 0px;
+     margin: 0px 0px 0px 0px;
+     gap: 10px;
+   }
+
+   .controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+   }
+
+   .input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  padding-left: 30px;
+  height: 30px;
+}
+
+.input-with-icon .search-icon {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+.hotel-table-container{
+  border: 1px solid rgb(168, 166, 166);
 }
 
 
-.container::-webkit-scrollbar {
-  display: none; 
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+.title{
+  display: flex;
+   }
+
+   .intel{
+  font-weight: 100;
+  font-size: 35px;
+  color: rgb(114, 108, 108);
+  padding: 20px 0px 0px 0px;
+   }
+   .cutoff{ 
+  display: flex; 
+   padding: 45px 0px 0px 30px;
+  }
+
+    .pix-009{
+    display: flex;
+    padding: 40px 0px 0px 38%;
+   }
+
+   .tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.tooltip-box {
+  visibility: hidden;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 6px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%; /* position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Triangle arrow */
+.tooltip-box::after {
+  content: "";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}

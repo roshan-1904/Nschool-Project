@@ -1,89 +1,7 @@
-// import { Component, EventEmitter, Output } from '@angular/core';
-// import { Hotel } from '../shared/hotel.model';        
-// import { HotelService } from '../shared/hotel.service';
-
-// @Component({
-//   selector: 'app-addnewroomdetails',
-//   templateUrl: './addnewroomdetails.component.html',
-//   styleUrls: ['./addnewroomdetails.component.css']
-// })
-// export class AddnewroomdetailsComponent {
-  
-//   @Output() hotelAdded = new EventEmitter<Hotel>();
-//   @Output() cancelForm = new EventEmitter<void>();
-
-//   hotelName = '';
-//   location = '';
-//   amount = 0;
-//   currency = '';
-//   rating = 0;
-//   reviewCount = 0;
-//   imageInput = '';
-//   roomDescription = '';
-//   bhk2 = false;
-//   bhk3 = false;
-//   ac = false;
-//   nonAc = false;
-
-//   constructor(private svc: HotelService) {}
-
-//   onSubmit() {
-//     const urls = this.imageInput.split(',')
-//       .map(url => url.trim())
-//       .filter(url => url && (url.startsWith('http') || url.startsWith('/assets')));
-
-//     const newHotel: Hotel = {
-//       hotelName: this.hotelName,
-//       location: this.location,
-//       amount: this.amount,
-//       currency: this.currency,
-//       rating: this.rating,
-//       reviewCount: this.reviewCount,
-//       imageUrls: urls,
-//       roomDescription: this.roomDescription,
-//       bhk2: this.bhk2,
-//       bhk3: this.bhk3,
-//       ac: this.ac,
-//       nonAc: this.nonAc
-//     };
-
-//     this.svc.addHotel(newHotel).subscribe({
-//       next: (savedHotel) => {
-//         alert('Hotel added successfully');
-//         this.hotelAdded.emit(savedHotel);
-//         this.resetForm();
-//       },
-//       error: (e) => alert('Error: ' + e.message)
-//     });
-//   }
-
-//   resetForm() {
-//     this.hotelName = '';
-//     this.location = '';
-//     this.amount = 0;
-//     this.currency = '';
-//     this.rating = 0;
-//     this.reviewCount = 0;
-//     this.imageInput = '';
-//     this.roomDescription = '';
-//     this.bhk2 = false;
-//     this.bhk3 = false;
-//     this.ac = false;
-//     this.nonAc = false;
-//   }
-
-//   cancel() {
-//     this.cancelForm.emit();
-//   }
-// }
-
-
-
-
-
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges , ViewChild} from '@angular/core';
 import { Hotel } from '../shared/hotel.model';
 import { HotelService } from '../shared/hotel.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-addnewroomdetails',
@@ -95,6 +13,13 @@ export class AddnewroomdetailsComponent implements OnChanges {
   @Output() hotelAdded = new EventEmitter<Hotel>();
   @Output() hotelUpdated = new EventEmitter<Hotel>();
   @Output() cancelForm = new EventEmitter<void>();
+
+
+
+  @ViewChild('hotelForm') hotelForm!: NgForm;
+
+
+
 
   hotelName = '';
   location = '';
@@ -108,7 +33,8 @@ export class AddnewroomdetailsComponent implements OnChanges {
   bhk3 = false;
   ac = false;
   nonAc = false;
-
+  showBhkError = false;
+  showAcError = false;
   constructor(private svc: HotelService) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -133,6 +59,31 @@ export class AddnewroomdetailsComponent implements OnChanges {
   }
 
   onSubmit() {
+
+      // Mark all fields as touched to trigger validation
+    this.hotelForm.control.markAllAsTouched();
+
+    // Custom validations
+    this.showBhkError = !(this.bhk2 || this.bhk3);
+    this.showAcError = !(this.ac || this.nonAc);
+
+    if (this.hotelForm.invalid || this.showBhkError || this.showAcError) {
+      alert('Please fill all required fields correctly.');
+      return;
+    }
+     const form = document.querySelector('form') as HTMLFormElement;
+       if (this.hotelForm.invalid) {
+      this.hotelForm.control.markAllAsTouched(); // Mark all fields touched
+      alert('Please fill in all required fields.');
+      return;
+    }
+  
+  if (!form.checkValidity()) {
+    const elements = form.querySelectorAll('.form-control');
+    elements.forEach(el => el.classList.add('was-validated'));
+    alert('Please fill in all required fields correctly.');
+    return;
+  }
     const urls = this.imageInput.split(',').map(s => s.trim()).filter(Boolean);
     const h: Hotel = {
       _id: this.hotel?._id,

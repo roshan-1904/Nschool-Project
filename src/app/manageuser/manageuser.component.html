@@ -4,38 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
-  <h2>{{ isEditMode ? 'Edit Hotel' : 'Add New Hotel' }}</h2>
+   <div class="title">
+           <p class="intel"> manage user </p>
+            <div class="cutoff">
+            <p class="home">Home >  </p>
+            <p class="Dashboard">  manage user</p>
+            </div>
 
-  <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="form">
-    <input formControlName="hotelName" placeholder="Hotel Name" />
-    <input formControlName="location" placeholder="Location" />
-    <input formControlName="amount" type="number" placeholder="Amount" />
-    <input formControlName="currency" placeholder="Currency" />
-    <input formControlName="rating" type="number" placeholder="Rating" step="0.1" />
-    <input formControlName="reviewCount" type="number" placeholder="Review Count" />
-    <textarea formControlName="roomDescription" placeholder="Room Description"></textarea>
-    <input formControlName="imageUrls" placeholder="Image URLs (comma separated)" />
+            <div class="pix-009">
 
-    <button type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
-    <button type="button" (click)="resetForm()">Clear</button>
-  </form>
+                <div class="tooltip-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="24" height="24" alt="Delete Selected" style="cursor: pointer;" (click)="deleteSelectedHotels()" />
+                    <div class="tooltip-box">Delete Selected</div>
+                 </div>
+
+ 
+                 <div class="tooltip-container">
+                    <img src="https://cdn-icons-png.flaticon.com/128/732/732220.png" width="24" height="24" alt="Excel" style="cursor: pointer;" (click)="exportToExcel()" />
+                     <div class="tooltip-box">Download Excel</div>
+                  </div>
+
+                  <div class="tooltip-container">
+                      <img src="https://cdn-icons-png.flaticon.com/512/4726/4726010.png" width="24" height="24" alt="PDF" style="cursor: pointer;" (click)="exportToPDF()" />
+                      <div class="tooltip-box">Download PDF</div>
+                  </div>
+
+                   <div class="tooltip-container">
+                      <img src="https://cdn-icons-png.flaticon.com/512/9159/9159105.png" width="24" height="24" alt="CSV" style="cursor: pointer;" (click)="exportToCSV()" />
+                      <div class="tooltip-box">Download CSV</div>
+                   </div>
+
+ 
+                   <div class="tooltip-container">
+                      <img src="https://cdn-icons-png.flaticon.com/512/11461/11461127.png" width="26" height="26" alt="Add Hotel"  class="img-small" style="cursor: pointer;" (click)="showAddNewPanel()" />
+                      <div class="tooltip-box">Add Hotel</div>
+                    </div>
+
+           </div>
+     </div>
+
+       <div *ngIf="showAddPanel">
+         <app-addnewmanage  (hotelAdded)="loadHotels()"  [editHotel]="editHotelData"  (saveHotel)="onSaveHotel($event)" (closePanel)="closeAddPanel()" ></app-addnewmanage>
+        </div>
+
 
   <hr />
-  <div *ngIf="hotels.length > 0">
-  <h3>Hotel List</h3>
-  <div class="cards-container">
-    <div *ngFor="let hotel of hotels" class="card">
-      <h4>{{ hotel.hotelName }} - {{ hotel.location }}</h4>
-      <p>€{{ hotel.amount }} | Rating: {{ hotel.rating }} ({{ hotel.reviewCount }} reviews)</p>
-      <p>{{ hotel.roomDescription }}</p>
+         <div  *ngIf="!showAddPanel && hotels.length > 0" class="hotel-table-container">
+            <div class="Customer-list">
+                  <div class="img">
+                     <img src="   https://cdn-icons-png.flaticon.com/512/151/151917.png " width="16" height="19"  a class="img-small ms-3">
+                     <p class="list">hotel List</p>
+                 </div>
+           </div>
 
-      <button (click)="editHotel(hotel)">Edit</button>
-      <button (click)="deleteHotel(hotel._id!)">Delete</button>
+<div class="controls-row">
+  <div class="search-box">
+    <div class="input-with-icon">
+      <input  type="text"  placeholder="Search by name or location..."  [(ngModel)]="searchTerm" (input)="applyFilter()"/>
+      <img src="https://cdn-icons-png.flaticon.com/512/566/566737.png" width="16" height="18"  alt="search icon" class="search-icon"/>
     </div>
   </div>
+
+  <div class="pagination-dropdown">
+    <label for="itemsPerPage">Show:</label>
+    <select [(ngModel)]="itemsPerPage" (change)="applyFilter()">
+      <option [value]="10">10 per page</option>
+      <option [value]="15">15 per page</option>
+      <option [value]="20">20 per page</option>
+    </select>
+  </div>
+</div>
+
+
+
+
+  <table class="hotel-table">
+    <thead>
+      <tr>
+          <th><input type="checkbox" (change)="toggleSelectAll($event)" /></th>
+        <th>Image</th>
+        <th>Hotel Name</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>RoomDescription</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hotel of hotels">
+         <td>
+          <input type="checkbox" [checked]="selectedHotelIds.has(hotel._id!)" (change)="toggleHotelSelection(hotel._id!)"  />
+         </td>
+      <td>
+        <img [src]="hotel.imageUrls?.[0] || 'https://via.placeholder.com/60'" alt="Hotel Image" class="hotel-img" />
+      </td>
+        <td>{{ hotel.hotelName }}</td>
+        <td>{{ hotel.location }}</td>
+        <td>{{ hotel.amount }} {{ hotel.currency }}</td>
+        <td>{{ hotel.rating }} ({{ hotel.reviewCount }} reviews)</td>
+        <td>{{ hotel.roomDescription }}</td>
+       
+        <td>
+          <div class="tooltip-wrapper">
+          <button (click)="editHotel(hotel)" class="btn btn-edit" (click)="showAddExistingHotel(hotel)">
+              <img src="https://cdn-icons-png.flaticon.com/512/18384/18384300.png" width="26" height="26" alt="Edit" class="img-small">
+          </button>
+           <span class="tooltip-text">Edit Hotel</span>
+          </div>
+
+          <div class="tooltip-wrapper">
+          <button (click)="deleteHotel(hotel._id!)" class="btn btn-delete">Delete</button>
+           <span class="tooltip-text">Delete Hotel</span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 </div>

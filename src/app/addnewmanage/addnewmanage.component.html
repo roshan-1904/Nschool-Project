@@ -1,0 +1,66 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+
+
+
+<h2>{{ isEditMode ? 'Edit Hotel' : 'Add New Hotel' }}</h2>
+
+<form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="form">
+
+  <input formControlName="hotelName" placeholder="Hotel Name" />
+  <div *ngIf="hotelForm.get('hotelName')?.touched && hotelForm.get('hotelName')?.invalid" class="error">
+    Hotel Name is required (min 3 characters).
+  </div>
+
+  <input formControlName="location" placeholder="Location" />
+  <div *ngIf="hotelForm.get('location')?.touched && hotelForm.get('location')?.invalid" class="error">
+    Location is required.
+  </div>
+
+  <input formControlName="amount" type="number" placeholder="Amount" />
+  <div *ngIf="hotelForm.get('amount')?.touched && hotelForm.get('amount')?.invalid" class="error">
+    Amount must be greater than 0.
+  </div>
+
+  <input formControlName="currency" placeholder="Currency" />
+  <div *ngIf="hotelForm.get('currency')?.touched && hotelForm.get('currency')?.invalid" class="error">
+    Currency is required.
+  </div>
+
+  <input formControlName="rating" type="number" placeholder="Rating (1-5)" step="0.1" />
+  <div *ngIf="hotelForm.get('rating')?.touched && hotelForm.get('rating')?.invalid" class="error">
+    Rating must be between 1 and 5.
+  </div>
+
+  <input formControlName="reviewCount" type="number" placeholder="Review Count" />
+  <div *ngIf="hotelForm.get('reviewCount')?.touched && hotelForm.get('reviewCount')?.invalid" class="error">
+    Review Count cannot be negative.
+  </div>
+
+  <textarea formControlName="roomDescription" placeholder="Room Description"></textarea>
+  <div *ngIf="hotelForm.get('roomDescription')?.touched && hotelForm.get('roomDescription')?.invalid" class="error">
+    Room description is required.
+  </div>
+
+  <input formControlName="imageUrls" placeholder="Image URLs (comma separated)" />
+  <div *ngIf="hotelForm.get('imageUrls')?.touched && hotelForm.get('imageUrls')?.invalid" class="error">
+    At least one image URL is required.
+  </div>
+
+  <!-- <button type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
+  <button type="button" (click)="resetForm()">Clear</button>
+  <button type="button" (click)="onCancel()">Close</button> -->
+   <button type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
+   <button type="button" (click)="onCancel()">Close</button>
+
+</form>
+
+
+  </body>
+  </html>

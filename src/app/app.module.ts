@@ -53,6 +53,7 @@ import { HoteltypesComponent } from './hoteltypes/hoteltypes.component';
 import { AddnewcostmerComponent } from './addnewcostmer/addnewcostmer.component';
 import { AddnewbookingComponent } from './addnewbooking/addnewbooking.component';
 import { AddnewroomdetailsComponent } from './addnewroomdetails/addnewroomdetails.component';
+import { AddnewmanageComponent } from './addnewmanage/addnewmanage.component';
 
 
 
@@ -108,6 +109,7 @@ import { AddnewroomdetailsComponent } from './addnewroomdetails/addnewroomdetail
        AddnewcostmerComponent,
        AddnewbookingComponent,
        AddnewroomdetailsComponent,
+       AddnewmanageComponent,
 
        
     
